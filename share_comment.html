@@ -23,14 +23,14 @@
 
 <script>
   var gitalk = new Gitalk({
-    clientID: '{{$.themeInfo.Comment.GtiTalk.clientID}}',
-    clientSecret: '{{$.themeInfo.Comment.GtiTalk.clientSecret}}',
-    repo: '{{$.themeInfo.Comment.GtiTalk.repo}}',
-    owner: '{{$.themeInfo.Comment.GtiTalk.owner}}', // 仓库的创建者
-    admin: {{$.themeInfo.Comment.GtiTalk.admin}}, // 如果仓库有多个人可以操作，那么在这里以数组形式写出
+    clientID: '{{$.themeInfo.Comment.Gitalk.clientID}}',
+    clientSecret: '{{$.themeInfo.Comment.Gitalk.clientSecret}}',
+    repo: '{{$.themeInfo.Comment.Gitalk.repo}}',
+    owner: '{{$.themeInfo.Comment.Gitalk.owner}}', // 仓库的创建者
+    admin: {{$.themeInfo.Comment.Gitalk.admin}}, // 如果仓库有多个人可以操作，那么在这里以数组形式写出
     id: '{{$.post.Title}}',      // Ensure uniqueness and length less than 50
     distractionFreeMode: false,  // Facebook-like distraction free mode
-    labels: ['Gittalk']
+    labels: ['Gitalk']
   });
 
   gitalk.render('gitalk-container');
