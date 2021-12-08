@@ -1,0 +1,70 @@
+/*
+以下是本主题的配置, 采用JSON格式
+其中Name, Version, Author, AuthorUrl是必填项(注意首字大写)
+你也可以定义其它的配置, 如FriendLinks, 在模板文件使用 $.themeInfo.FriendLinks来获取值
+
+注意: 
+1) JSON语法严格, 键必须用双引号, 最后不得有空','来结尾
+2) 以下配置不能包含任何注释, 不然解析会出错!
+
+请在此解析所有配置
+* Name 主题名
+* Version 主题版本
+* Author 主题的作者
+* Avatar 右上角头像
+* AuthorUrl 作者的博客链接或相关链接
+* PostAuthor post页面显示的作者
+* Title 站点标题
+* SocialLinks 社交连接
+* SubTitle: 站点子标题
+* ReadNum: 是否阅读量统计 ReadNumType: 阅读计数的方式：Leanote, Leacloud
+* GoogleAnalytics: Google 分析
+* Comment: 是否开启评论；评论类型：Valine, Gitalk, Disqus
+* FriendLinks 友情链接
+*/
+{
+    "Name": "Chirpy",
+    "Version": "1.0",
+    "Author": "骑青牛",
+    "Icon": "avatar.jpg",
+    "Avatar": "avatar.jpg",
+    "AuthorUrl": "https://blog.ctaoist.cn",
+    "PostAuthor": "ctaoist",
+    "Title": "不见春山",
+    "SubTitle": "骑马倚斜桥，满楼红袖招。",
+    "ReadNum": {
+        "Enable": false,
+        "ReadNumType": "Leacloud"
+    },
+    "GoogleAnalytics": {
+        "Id": ""
+    },
+    "Comment": {
+        "Enable": false,
+        "CommentType": "Gitalk",
+        "Valine": {
+            "appId": "",
+            "appKey": ""
+        },
+        "Gitalk": {
+            "clientID": "",
+            "clientSecret": "",
+            "repo": "",
+            "owner": "",
+            "admin": [""]
+        },
+        "Disqus": {
+            "DisqusId": ""
+        }
+    },
+    "SocialLinks": [
+        {"Title": "github", "Url": "https://github.com/275761919"},
+        {"Title": "twitter", "Url": "https://twitter.com/a275761919"}
+    ],
+    "FriendLinks": [
+        {"Title": "Leanote Home", "Url": "http://leanote.com"},
+        {"Title": "Leanote Comunity", "Url": "https://groups.google.com/forum/?fromgroups#!forum/leanote"},
+        {"Title": "lea++", "Url": "http://lea.leanote.com"},
+        {"Title": "Leanote Github", "Url": "https://github.com/leanote/leanote"}
+    ]
+}
