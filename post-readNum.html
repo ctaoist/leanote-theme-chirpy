@@ -1,4 +1,4 @@
-{{ if and $.themeInfo.ReadNum.Enable (eq $.themeInfo.ReadNum.ReadNumType "Leacloud") }}
+{{ if and $.themeInfo.ReadNumType (eq $.themeInfo.ReadNumType "Leacloud") }}
 <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3/dist/av-min.js"></script>
 <script type="text/javascript"> 
   $(function () {
@@ -60,6 +60,6 @@
   });
 </script>
 
-{{ else if and $.curIsPost (and $.themeInfo.ReadNum.Enable (eq $.themeInfo.ReadNum.ReadNumType "Leanote")) }}
+{{ else if and $.curIsPost (and $.themeInfo.ReadNumType (eq $.themeInfo.ReadNumType "Leanote")) }}
 <script>$.get("//" + location.host + "/blog/incReadNum", { noteId: "{{$.post.NoteId}}" }, function () {});</script>
 {{ end }}

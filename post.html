@@ -1,4 +1,5 @@
 {{template "header.html" .}}
+{{template "post-readNum.html" .}}
 
 <div id="main-wrapper">
   <div id="main">
@@ -17,11 +18,11 @@
             ·
             <span class="timeago" data-toggle="tooltip" data-placement="bottom" title="{{.post.UpdatedTime | datetime}}">最后更新：{{dateFormat .post.UpdatedTime "2006-01-02"}}</span>
             <!-- page views -->
-            {{ if $.themeInfo.ReadNum.Enable }}
+            {{ if $.themeInfo.ReadNumType }}
               <i class="far fa-eye fa-fw"></i>
-              {{ if eq $.themeInfo.ReadNum.ReadNumType "Leanote"}}
+              {{ if eq $.themeInfo.ReadNumType "Leanote"}}
                 <span id="pv_{{.Title}}" class="pageviews">{{$.post.ReadNum}}</span>
-              {{else}}
+              {{else if eq $.themeInfo.ReadNumType "Leacloud"}}
                 <span id="{{$.postUrl}}/{{.post.UrlTitle}}" class="leancloud_visitors"><span class="leancloud-visitors-count">1</span></span>
               {{end}}
             {{end}}
@@ -116,6 +117,9 @@
  <link href="//cdn.jsdelivr.net/gh/ctaoist/leanote@cdev/public/js/google-code-prettify/prettify.min.css" type="text/css" rel="stylesheet"/>
  <!-- <link href="{{$.prettifyCssUrl}}" type="text/css" rel="stylesheet"/> -->
  <!-- <script src="{{$.prettifyJsUrl}}"></script> -->
+ 
+ <!-- Emoji -->
+ <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
 
 <!-- markdown 调用markdown来解析得到html -->
 {{if $.post.IsMarkdown }}

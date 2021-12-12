@@ -28,12 +28,16 @@
 
 ## 安装
 
+这个分支对应官方发布的Leanote，当前的最新版为2.6.1，其分类页面的逻辑和 Hexo、Jekyll、Hugo 等静态博客都不一样，所以有关分类的功能不可用，其他功能正常。如果想体验完整的功能，请切换到 master 分支。
+
+本分支的安装流程如下：
+
 1. 参考 [Leanote Wiki](https://github.com/leanote/leanote/wiki/Leanote-%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%89%88%E8%AF%A6%E7%BB%86%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B----Mac-and-Linux) 安装 Leanote 服务端
-2. 下载这个仓库的压缩包，在 Leanote 主题配置页面导入即可。
+2. 在 [Releases页面](https://github.com/ctaoist/leanote-theme-chirpy/releases) 下载 **1.0.x** 版本的压缩包，在 Leanote 主题配置页面导入即可。
 
 ## 使用
 
-根据个人需要去修改 `theme.json` 的内容，都有注释介绍用法，其中评论和文章阅读统计功能默认是关闭的，想打开需要把相应的 `Enable` 选项改成 `true`。
+根据个人需要去修改 `theme.json` 的内容，都有注释介绍用法，其中评论和文章阅读统计功能默认是关闭的，想打开需要设置 `CommentType` 和 `ReadNumType` 字段。
 
 ### 使用 Gitalk 评论
 
@@ -80,6 +84,7 @@ Gitalk 需要手动初始化所有文章的评论：用自己的 Github 账号�
 1. [x] MathJax 升级到 3.0 [](https://www.osgeo.cn/mathjax/upgrading/v2.html)
 1. [x] 支持 [Valine](https://valine.js.org/)，一款基于LeanCloud的快速、简洁且高效的无后端评论系统
 1. [x] 支持 [GitTalk](https://github.com/gitalk/gitalk)
+1. [x] 分页列出所有的页码
 1. [] 本地化外观语言
 1. [] 自动推荐相关文章
 1. [] [Gitalk 初始化脚本](https://draveness.me/git-comments-initialize/)
@@ -90,7 +95,6 @@ Gitalk 需要手动初始化所有文章的评论：用自己的 Github 账号�
 1. [x] MathJax 升级到3.0后，不使用原来的代码，公式中的换行(双斜杠)会被转义成单斜杠，暂代方案是使用(`\\\`)或者 `\newlineh` 或者 [`\displaylines`](https://github.com/mathjax/MathJax/issues/2312)。目前是参考了 [Hexo下mathjax的转义问题](https://segmentfault.com/a/1190000007261752) 和 [使Marked.js与MathJax共存](https://blog.csdn.net/emptyset110/article/details/50123231)， 取消了对 `\\` 和 `\{}` 的转义，公式能够正常换行，但有没有别的 Bug 还有待观察
 1. [x] 代码块下部离文字太近
 1. [x] post 的阅读次数没有增加：可选使用 Leanote 自带的阅读计数或者用 LeanCloud 的阅读计数
-1. [] 由于 Go Template 功能受限，主页的分页并没有列出所有的页码
 1. [] Leanote 的分类页面的逻辑和 Jekyll、Hexo 等的不一样，Leanote 不渲染相应的页面，所以分类页面虽然完成了移植，但功能不可用
 1. [] 将博客设置里的排序方式改成按照创建时间排序后，影响的只有主页的排序，归档页面仍然是按照 PublicTime 排序的。
 

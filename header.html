@@ -45,19 +45,14 @@
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css">
 
-<!-- Emoji -->
-<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
-
-<!-- <script src="https://cdn.jsdelivr.net/npm/xregexp@5/xregexp-all.min.js"></script> -->
 <!-- <script async src="https://cdn.jsdelivr.net/npm/countup.js@1.9.3/dist/countUp.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/xregexp@5/xregexp-all.min.js"></script> -->
 <!-- <script src="https://cdn.jsdelivr.net/combine/npm/lozad/dist/lozad.min.js"></script> -->
 
 <script src="{{$.themeBaseUrl}}/topbar.js"></script>
 <script src="{{$.themeBaseUrl}}/blog.js"></script>
 <link href="{{$.themeBaseUrl}}/style.css" rel="stylesheet">
 <link href="{{$.themeBaseUrl}}/block-container.css" rel="stylesheet">
-
-{{template "post-readNum.html" $}}
 
 {{ if $.themeInfo.GoogleAnalytics.Id }}
 <!-- Google Analytics -->
@@ -106,7 +101,7 @@
     </li>
     <!-- categories -->
     <li class="nav-item{{if $.curIsCate}} active{{end}}">
-      <a href="{{$.themeBaseUrl}}/cates.html" class="nav-link">
+      <a href="/?cates=undefined" class="nav-link">
         <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i>
         <span>Categories</span>
       </a>
