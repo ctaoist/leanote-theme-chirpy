@@ -56,31 +56,17 @@
         }
     },
     "SocialLinks": [
-        {
-            "Title": "github",
-            "Url": "https://github.com/275761919"
-        },
-        {
-            "Title": "twitter",
-            "Url": "https://twitter.com/a275761919"
-        }
+        {"Title": "github", "Url": "https://github.com/ctaoist"},
+        {"Title": "twitter", "Url": "https://twitter.com/ctaoist"}
     ],
     "FriendLinks": [
-        {
-            "Title": "Leanote Home",
-            "Url": "http://leanote.com"
+        {"Title": "Leanote Home", "Url": "http://leanote.com"
         },
-        {
-            "Title": "Leanote Comunity",
-            "Url": "https://groups.google.com/forum/?fromgroups#!forum/leanote"
+        {"Title": "Leanote Comunity", "Url": "https://groups.google.com/forum/?fromgroups#!forum/leanote"
         },
-        {
-            "Title": "lea++",
-            "Url": "http://lea.leanote.com"
+        {"Title": "lea++", "Url": "http://lea.leanote.com"
         },
-        {
-            "Title": "Leanote Github",
-            "Url": "https://github.com/leanote/leanote"
+        {"Title": "Leanote Github", "Url": "https://github.com/leanote/leanote"
         }
     ]
 }
