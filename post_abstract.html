@@ -26,6 +26,13 @@
         {{end}}
       {{end}}
     </div>
+    <!-- pin -->
+    {{ if .IsTop }}
+    <div class="pin">
+      <i class="fas fa-thumbtack fa-fw"></i>
+      <span>Pinned</span>
+    </div>
+    {{ end }}
   </div> <!-- .post-meta -->
 </div> <!-- .post-review -->
 {{else}}

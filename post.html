@@ -48,13 +48,14 @@
 
         <div class="post-tail-wrapper text-muted">
             <!-- categories -->
-            <!-- <div class="post-meta mb-3">
-              <i class="far fa-folder-open fa-fw mr-1"></i>
-              {% for category in page.categories %}
-                <a href='/'></a>
-                {%- unless forloop.last -%}, {%- endunless -%}
-              {% endfor %}
-            </div> -->
+            {{ if .post.Cates}}
+              <div class="post-meta mb-3">
+                <i class="far fa-folder-open fa-fw mr-1"></i>
+                {{ range .post.Cates }}
+                  <a href="{{$.cateUrl}}/{{.UrlTitle}}">{{.Title}}</a>
+                {{ end }}
+              </div>
+            {{ end }}
 
             <!-- tags -->
             <div class="post-tags">

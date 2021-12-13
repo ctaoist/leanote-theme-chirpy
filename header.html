@@ -9,26 +9,26 @@
 <link rel="Shortcut icon" href="{{$.themeBaseUrl}}/images/{{$.themeInfo.Icon}}">
 
 <title>
-{{if $.curIsIndex}}
-    {{$.blogInfo.Title}}
-{{else if $.curIsCate}}
-    Category-{{$.curCateTitle}}
-{{else if $.curIsSearch}}
-    Search-{{$.keywords}}
-{{else if $.curIsTags}}
-    Tags
-{{else if $.curIsTagPosts}}
-    Tag-{{$.curTag}}
-{{else if $.curIsPost}}
-	{{$.post.Title}}
-{{else if $.curIsSingle}}
-	{{$.single.Title}}
-{{else if $.curIsArchive}}
-	Archives
-{{end}}
-    
+  {{if $.curIsIndex}}
+      {{$.blogInfo.Title}}
+  {{else if $.curIsCate}}
+      Category-{{$.curCateTitle}}
+  {{else if $.curIsSearch}}
+      Search-{{$.keywords}}
+  {{else if $.curIsTags}}
+      Tags
+  {{else if $.curIsCates}}
+      Categories
+  {{else if $.curIsTagPosts}}
+      Tag-{{$.curTag}}
+  {{else if $.curIsPost}}
+    {{$.post.Title}}
+  {{else if $.curIsSingle}}
+    {{$.single.Title}}
+  {{else if $.curIsArchive}}
+    Archives
+  {{end}}
 </title>
-
 <!-- jsDelivr CDN -->
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
@@ -101,7 +101,7 @@
     </li>
     <!-- categories -->
     <li class="nav-item{{if $.curIsCate}} active{{end}}">
-      <a href="/?cates=undefined" class="nav-link">
+      <a href="{{$.catesUrl}}" class="nav-link">
         <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i>
         <span>Categories</span>
       </a>
@@ -158,6 +158,11 @@
             <span>{{$.post.Title}}</span>
           {{else if $.curIsTags}}
             <span>Tags</span>
+          {{else if $.curIsCates}}
+            <span>Categories</span>
+          {{else if $.curIsCate}}
+            <span><a href="{{$.catesUrl}}">Categories</a></span>
+            <span>{{$.curCateTitle}}</span>
           {{else if $.curIsTagPosts}}
             <span><a href="{{$.tagsUrl}}">Tags</a></span>
             <span>{{$.curTag}}</span>
