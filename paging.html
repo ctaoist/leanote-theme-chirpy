@@ -60,7 +60,7 @@
         </li>
       {{ else }}
         <!-- hide number -->
-        {{ if and (lt $i $.pre) $.left_ellipsis }}
+        {{ if and (lt $i $.pre) (not $.left_ellipsis) }}
           <li class="page-item disabled">
             <span class="page-link btn-box-shadow">...</span>
           </li>
