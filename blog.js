@@ -184,4 +184,10 @@ function blogPostInit() {
     new Chart(ctx, jsonObject);
     $(this).replaceWith(containerElt); // $(selectorA).replaceWitj(dom); $(this).after(containerElt); $(this).remove();
   });
+
+  /* Magnific Popup */
+  $("img").each(function () {
+    $(this).attr("href", $(this).attr("src"));
+  });
+  $("img").magnificPopup({type:'image'});
 }
