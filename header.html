@@ -47,6 +47,7 @@
 <!-- <script src="https://cdn.jsdelivr.net/combine/npm/lozad/dist/lozad.min.js"></script> -->
 
 <script src="{{$.themeBaseUrl}}/topbar.js"></script>
+<script src="{{$.themeBaseUrl}}/search.js"></script>
 <script src="{{$.themeBaseUrl}}/blog.js"></script>
 <link href="{{$.themeBaseUrl}}/style.css" rel="stylesheet">
 <link href="{{$.themeBaseUrl}}/block-container.css" rel="stylesheet">
@@ -172,7 +173,23 @@
 
     <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i>
 
-    <div id="topbar-title">Topbar-title</div>
+    <div id="topbar-title">
+      {{if $.curIsPost}}
+        {{$.post.Title}}
+      {{else if $.curIsTags}}
+        Tags
+      {{else if $.curIsTagPosts}}
+        Tag
+      {{else if $.curIsCates}}
+        Categories
+      {{else if $.curIsCate}}
+        Categories
+      {{else if $.curIsArchive}}
+        Archives
+      {{else if $.curIsSingle}}
+        {{$.single.Title}}
+      {{end}}
+    </div>
 
     <i id="search-trigger" class="fas fa-search fa-fw"></i>
     <form id="search-wrapper" class="align-items-center" onsubmit="search(event);return false;">
