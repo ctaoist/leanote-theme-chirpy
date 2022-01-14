@@ -97,7 +97,7 @@
         $(".mermaid").each(function() {
           // let svgCode = $(this).prev().children().html();  // 这里已经添加行号等信息
           let svgCode = "";
-          $(this).prev().children("ol").children("li").each(function () {
+          $(this).prev().children(1).children("ol").children("li").each(function () {
             svgCode = svgCode + $(this).text() + "\n";
           });
           $(this).removeAttr("data-processed");

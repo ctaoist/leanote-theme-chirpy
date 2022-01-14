@@ -17,6 +17,7 @@
 * Title 站点标题
 * SocialLinks 社交连接
 * SubTitle: 站点子标题
+* CDN: 留空则使用 local js，需要服务端版本 >= 2.7.2
 * ReadNumType: 阅读计数的方式：Leanote, Leacloud, 空字符串则关闭阅读统计
 * GoogleAnalytics: Google 分析
 * CommentType: 评论类型：Valine, Gitalk, Disqus, 空字符串则关闭评论
@@ -32,6 +33,7 @@
     "PostAuthor": "ctaoist",
     "Title": "不见春山",
     "SubTitle": "骑马倚斜桥，满楼红袖招。",
+    "CDN": "",
     "ReadNumType": "",
     "GoogleAnalytics": {
         "Id": ""

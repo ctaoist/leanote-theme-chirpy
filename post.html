@@ -104,53 +104,106 @@
 <!--对应header结束-->
 
 {{template "back-to-top.html" .}}
-{{template "mathjax.html" .}}
+<!-- {{template "mathjax.html" .}} -->
 <div id="isPost"></div>
 
+{{if eq $.themeInfo.CDN "jsdelivr"}}
 <!-- 只有post才需要，从 Header 中移到这里 -->
 <!--clibboard-->
 <script src="//cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<!-- Bootstrap-Toc -->
+<script src="//cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css">
 <!--Mermaid and ChartJs -->
 <script src="//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/chart.js@3.6.1/dist/chart.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/chart.js@3/dist/chart.min.js"></script>
 <!-- Manific Popup -->
 <script src="https://cdn.jsdelivr.net/npm/magnific-popup@1/dist/jquery.magnific-popup.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.min.css">
- <!-- Google Code Pretty -->
- <script src="//cdn.jsdelivr.net/npm/code-prettify@0.1.0/src/prettify.min.js"></script>
- <link href="//cdn.jsdelivr.net/gh/ctaoist/leanote@cdev/public/js/google-code-prettify/prettify.min.css" type="text/css" rel="stylesheet"/>
- <!-- <link href="{{$.prettifyCssUrl}}" type="text/css" rel="stylesheet"/> -->
- <!-- <script src="{{$.prettifyJsUrl}}"></script> -->
- 
- <!-- Emoji -->
- <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1/dist/magnific-popup.min.css">
+<!-- Prism Highlight -->
+<script src="//cdn.jsdelivr.net/npm/prismjs@1/prism.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1/components.js"></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/prismjs@1/themes/prism.min.css">
+<link href="//cdn.jsdelivr.net/gh/ctaoist/leanote@cdev/public/libs/google-code-prettify/prettify.min.css" type="text/css" rel="stylesheet"/>
+<!-- Katex -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.15/dist/katex.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15/dist/katex.min.css">
+<!-- Markdown It -->
+<script src="//cdn.jsdelivr.net/npm/markdown-it@12/dist/markdown-it.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/ctaoist/leanote@cdev/public/libs/markdown-it/plugins/markdown-it-emoji.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/ctaoist/leanote@cdev/public/libs/markdown-it/plugins/katex.js"></script>
+<script src="//cdn.jsdelivr.net/gh/ctaoist/leanote@cdev/public/libs/markdown-it/plugins/markdown-it-container.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/ctaoist/leanote@cdev/public/libs/markdown-it/plugins/markdown-it-task-lists.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/ctaoist/leanote@cdev/public/libs/markdown-it/plugins/prismjs.js"></script>
+{{else}}
+<!-- <link href="{{$.prettifyCssUrl}}" type="text/css" rel="stylesheet"/> -->
+<!-- <script src="{{$.prettifyJsUrl}}"></script> -->
+<!-- BootStrap -->
+<script src="/libs/bootstrap/bootstrap-toc.min.js"></script>
+<link rel="stylesheet" href="/libs/bootstrap/bootstrap-toc.min.css">
+<!-- Prism -->
+<script src="/libs/prismjs/prism.min.js"></script>
+<script src="/libs/prismjs/components.js"></script>
+<link rel="stylesheet" href="/libs/prismjs/prism.min.css">
+<link rel="stylesheet" href="/libs/google-code-prettify/prettify.css">
+<!-- Manific Popup -->
+<script src="/libs/magnific-popup/jquery.magnific-popup.min.js"></script>
+<link rel="stylesheet" href="/libs/magnific-popup/magnific-popup.min.css">
+<!-- clipboard -->
+<script src="/libs/clipboard.min.js"></script>
+<!--Mermaid and ChartJs -->
+<script src="/libs/chart.min.js"></script>
+<script src="/libs/mermaid.min.js"></script>
+<!-- Katex -->
+<script src="/libs/katex/katex.min.js"></script>
+<link rel="stylesheet" href="/libs/katex/katex.min.css">
+<!-- Markdown It -->
+<script src="/libs/markdown-it/markdown-it.min.js"></script>
+<script src="/libs/markdown-it/plugins/markdown-it-emoji.min.js"></script>
+<script src="/libs/markdown-it/plugins/katex.js"></script>
+<script src="/libs/markdown-it/plugins/markdown-it-container.min.js"></script>
+<script src="/libs/markdown-it/plugins/markdown-it-task-lists.min.js"></script>
+<script src="/libs/markdown-it/plugins/prismjs.js"></script>
+{{end}}
+
+<script src="{{$.themeBaseUrl}}/blog.js"></script>
+<link href="{{$.themeBaseUrl}}/block-container.css" rel="stylesheet">
 
 <!-- markdown 调用markdown来解析得到html -->
 {{if $.post.IsMarkdown }}
-<script src="//cdn.jsdelivr.net/gh/ctaoist/leanote@cdev/public/libs/md2html/md2html_no_escape.min.js"></script>
-<!-- <script src="/public/libs/md2html/md2html_no_escape.min.js"></script> -->
-
+<!-- <script src="//cdn.jsdelivr.net/gh/ctaoist/leanote@cdev/public/libs/md2html/md2html_no_escape.min.js"></script> -->
 <script>
 var content = $.trim($("#markdownContent textarea").val());
-md2Html(content, $("#content"), function(html) {
-  blogPostInit();
-    // $(".code-header > button").addClass("clipboard").attr("data-clipboard-target", "pre")
-      // .attr("data-toggle", "tooltip").attr("data-placement", "left");
-    $("pre").addClass("prettyprint linenums");
-    prettyPrint();
-    // weixin();
-});
+var markdownit = window.markdownit({
+                html: true,
+              })
+                .use(window.markdownitEmoji)
+                // .use(window.markdownitMermaid)
+                .use(window.markdownitKatex)
+                .use(window.markdownitPrismjs, {plugins: ['line-numbers', 'code-header']})
+                .use(window.markdownitTaskLists )
+                .use(window.markdownitContainer, 'success')
+                .use(window.markdownitContainer, 'info')
+                .use(window.markdownitContainer, 'warning')
+                .use(window.markdownitContainer, 'danger');
+document.getElementById('content').innerHTML = markdownit.render(content);
+blogPostInit();
+// md2Html(content, $("#content"), function(html) {
+//   blogPostInit();
+//     $("pre").addClass("prettyprint linenums");
+//     prettyPrint();
+// });
 
 // fix issue https://github.com/afeld/bootstrap-toc/issues/{21,34,35}
-$(document).ready(function () {
-  let $toc_ul = $("#toc > ul");
-  if ($toc_ul.length) {
-    $toc_ul.eq(1).remove(); // 移除生成的第二个目录，从0开始计数
-    if ($toc_ul.html().length == 0) { // post没有目录则隐藏
-      $("#toc-wrapper").addClass("unloaded");
-    }
-  }
-});
+// $(document).ready(function () {
+//   let $toc_ul = $("#toc > ul");
+//   if ($toc_ul.length) {
+//     $toc_ul.eq(1).remove(); // 移除生成的第二个目录，从0开始计数
+//     if ($toc_ul.html().length == 0) { // post没有目录则隐藏
+//       $("#toc-wrapper").addClass("unloaded");
+//     }
+//   }
+// });
 </script>
 <!-- 不是markdown -->
 {{else}}

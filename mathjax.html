@@ -13,5 +13,11 @@
         }
     };
 </script>
+
+{{if eq $.themeInfo.CDN "jsdelivr"}}
 <script type="text/javascript" id="MathJax-script" async
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+{{else}}
+<script type="text/javascript" id="MathJax-script" async
+    src="/libs/mathjax3/es5/tex-chtml.min.js"></script>
+{{end}}

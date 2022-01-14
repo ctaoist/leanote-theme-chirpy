@@ -29,6 +29,7 @@
     Archives
   {{end}}
 </title>
+{{if eq $.themeInfo.CDN "jsdelivr"}}
 <!-- jsDelivr CDN -->
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
@@ -36,21 +37,30 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
 <!-- Bootstrap -->
 <script src="https://cdn.jsdelivr.net/combine/npm/popper.js@1.16.1,npm/bootstrap@4/dist/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
-<script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css">
 <!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
 
 <!-- <script async src="https://cdn.jsdelivr.net/npm/countup.js@1.9.3/dist/countUp.min.js"></script> -->
 <!-- <script src="https://cdn.jsdelivr.net/npm/xregexp@5/xregexp-all.min.js"></script> -->
 <!-- <script src="https://cdn.jsdelivr.net/combine/npm/lozad/dist/lozad.min.js"></script> -->
+{{else}}
+<script src="/libs/jquery/jquery-1.9.0.min.js"></script>
+<script src="/libs/popper.min.js"></script>
+<script src="/libs/bootstrap/bootstrap-4.6.1.min.js"></script>
+<link rel="stylesheet" href="/libs/bootstrap/bootstrap-4.6.1.min.css">
+<link rel="stylesheet" href="/fonts/font-awesome-5.15.4/css/all.min.css">
+{{end}}
 
 <script src="{{$.themeBaseUrl}}/topbar.js"></script>
 <script src="{{$.themeBaseUrl}}/search.js"></script>
-<script src="{{$.themeBaseUrl}}/blog.js"></script>
 <link href="{{$.themeBaseUrl}}/style.css" rel="stylesheet">
-<link href="{{$.themeBaseUrl}}/block-container.css" rel="stylesheet">
+<style>
+#search-results .post-tags a {
+  font-size: 0.85rem;
+  line-height: 0.85rem;
+}
+</style>
 
 {{ if $.themeInfo.GoogleAnalytics.Id }}
 <!-- Google Analytics -->
@@ -65,6 +75,63 @@
 </script>
 <!-- End Google Analytics -->
 {{ end }}
+
+<script>
+$(function () {
+  // 初始化 tooltip
+  $('[data-toggle="tooltip"]').tooltip();
+
+  // back-to-top
+  $(window).scroll(() => {
+    if ($(this).scrollTop() > 50 && $("#sidebar-trigger").css("display") === "none") {
+      $("#back-to-top").fadeIn();
+    } else {
+      $("#back-to-top").fadeOut();
+    }
+  });
+  $("#back-to-top").click(() => {
+    $("body,html").animate({ scrollTop: 0 }, 800);
+    return false;
+  });
+
+  // search
+  const input = $("#search-input");
+  const btnClear = $("#search-cleaner");
+  const searchWrapper = $("#search-wrapper");
+  if (input.val() !== "") {
+    if (!btnClear.hasClass("visible")) { btnClear.addClass("visible"); }
+  }
+  input.on("keyup", function (e) {
+    if (input.val() !== "") {
+      if (!btnClear.hasClass("visible")) { btnClear.addClass("visible"); }
+    }
+  });
+  btnClear.on("click", function () {
+    input.val("");
+    input.focus(); searchWrapper.addClass("input-focus");
+    btnClear.removeClass("visible");
+  });
+
+  // Expand or close the sidebar in mobile screens.
+  const sidebarUtil = (function () {
+    const ATTR_DISPLAY = "sidebar-display";
+    let isExpanded = false;
+    const body = $("body");
+    return {
+      toggle() {
+        if (isExpanded === false) {
+          body.attr(ATTR_DISPLAY, "");
+        } else {
+          body.removeAttr(ATTR_DISPLAY);
+        }
+        isExpanded = !isExpanded;
+      }
+    };
+  }());
+  $("#sidebar-trigger").click(sidebarUtil.toggle);
+  $("#mask").click(sidebarUtil.toggle);
+});
+</script>
 
 </head>
 <body>
@@ -174,7 +241,9 @@
     <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i>
 
     <div id="topbar-title">
-      {{if $.curIsPost}}
+      {{if $.curIsIndex}}
+        Home
+      {{else if $.curIsPost}}
         {{$.post.Title}}
       {{else if $.curIsTags}}
         Tags

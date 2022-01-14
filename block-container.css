@@ -1,11 +1,19 @@
+pre ol li span {
+    color: #333;
+}
+pre[class*="language-"] {
+    background: transparent;
+    margin: 0;
+    outline: none;
+    font-size: 0.85rem;
+}
+.token.operator {
+  background: transparent;
+}
+
 .highlight {
   margin-bottom: 1.2em;
   /* Override BS Inline-code style */
-}
-
-#search-results .post-tags a {
-  font-size: 0.85rem;
-  line-height: 0.85rem;
 }
 
 .mermaid {

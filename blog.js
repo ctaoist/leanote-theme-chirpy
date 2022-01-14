@@ -1,67 +1,3 @@
-$(function () {
-  // 初始化tooltip
-  $('[data-toggle="tooltip"]').tooltip();
-
-  // back-to-top
-  $(window).scroll(() => {
-    if ($(this).scrollTop() > 50 && $("#sidebar-trigger").css("display") === "none") {
-      $("#back-to-top").fadeIn();
-    } else {
-      $("#back-to-top").fadeOut();
-    }
-  });
-
-  $("#back-to-top").click(() => {
-    $("body,html").animate({ scrollTop: 0 }, 800);
-    return false;
-  });
-
-  // search
-  const input = $("#search-input");
-  const btnClear = $("#search-cleaner");
-  const searchWrapper = $("#search-wrapper");
-  if (input.val() !== "") {
-    if (!btnClear.hasClass("visible")) { btnClear.addClass("visible"); }
-  }
-  input.on("keyup", function (e) {
-    if (input.val() !== "") {
-      if (!btnClear.hasClass("visible")) { btnClear.addClass("visible"); }
-    }
-  });
-  btnClear.on("click", function () {
-    input.val("");
-    input.focus(); searchWrapper.addClass("input-focus");
-    btnClear.removeClass("visible");
-  });
-
-  // Expand or close the sidebar in mobile screens.
-  const sidebarUtil = (function () {
-    const ATTR_DISPLAY = "sidebar-display";
-    let isExpanded = false;
-    const body = $("body");
-    return {
-      toggle() {
-        if (isExpanded === false) {
-          body.attr(ATTR_DISPLAY, "");
-        } else {
-          body.removeAttr(ATTR_DISPLAY);
-        }
-        isExpanded = !isExpanded;
-      }
-    };
-  }());
-  $("#sidebar-trigger").click(sidebarUtil.toggle);
-  $("#mask").click(sidebarUtil.toggle);
-
-  //check box
-  /* hide browser default checkbox */
-  $("input[type=checkbox]").addClass("unloaded");
-  /* create checked checkbox */
-  $("input[type=checkbox][checked]").before("<i class=\"fas fa-check-circle checked\"></i>");
-  /* create normal checkbox */
-  $("input[type=checkbox]:not([checked])").before("<i class=\"far fa-circle\"></i>");
-});
-
 function blogPostInit() {
   const btnSelector = '.code-header>button';
   const ATTR_TIMEOUT = 'timeout';
@@ -69,13 +5,39 @@ function blogPostInit() {
 
   // Toc初始化
   var navSelector = "#toc";
-  Toc.init($(navSelector)
-    // $nav: $(navSelector)
+  Toc.init = function (opts) {
+      if (typeof opts.$nav === "undefined") { return null; }
+      // If the element has the processed class already, do not build the TOC.
+      if (opts.$nav.hasClass('processed')) {
+        return null;
+      }
+      opts = this.helpers.parseOps(opts);
+
+      // ensure that the data attribute is in place for styling
+      opts.$nav.attr('data-toggle', 'toc');
+
+      var $topContext = this.helpers.createChildNavList(opts.$nav);
+      var topLevel = this.helpers.getTopLevel(opts.$scope);
+      var $headings = this.helpers.getHeadings(opts.$scope, topLevel);
+      this.helpers.populateNav($topContext, topLevel, $headings);
+
+      // Add a processed class after the TOC has been built.
+      opts.$nav.addClass('processed');
+  };
+  Toc.init({
+    $nav: $(navSelector),
     // $scope: $("h1, h2, h3, h4, h5, h6"),
-  );
+  });
   $("body").scrollspy({
     target: $(navSelector)
   });
+  let $toc_ul = $("#toc > ul");
+  if ($toc_ul.length) {
+    // $toc_ul.eq(1).remove(); // 移除生成的第二个目录，从0开始计数
+    if ($toc_ul.html().length == 0) { // post没有目录则隐藏
+      $("#toc-wrapper").addClass("unloaded");
+    }
+  }
 
   function isLocked(node) {
     if ($(node)[0].hasAttribute(ATTR_TIMEOUT)) {
@@ -160,14 +122,15 @@ function blogPostInit() {
   }
 
   // Mermaid Markdown converts to HTML
-  $("pre").has("code.language-mermaid").each(function () {
-    let svgCode = $(this).children().html(); // 执行这里的时候还没有添加行号等信息
-    // var svgCode = "";
-    // $(this).children("ol").children("li").each(function () { //放到 prttyInit 后面执行，已经有行号了
-    //   svgCode = svgCode + $(this).text() + "\n";
-    // });
-    $(this).addClass("unloaded");
-    $(this).after(`<div class=\"mermaid\">${svgCode}</div>`);
+  // $("pre").has("code.language-mermaid").each(function () {
+  $("pre.language-mermaid").each(function () {
+    // let svgCode = $(this).children().html(); // 执行这里的时候还没有添加行号等信息
+    let svgCode = "";
+    $(this).children("ol").children("li").each(function () { //放到 prttyInit 后面执行，已经有行号了
+      svgCode = svgCode + $(this).text() + "\n";
+    });
+    $(this).parent().addClass("unloaded");
+    $(this).parent().after(`<div class=\"mermaid\">${svgCode}</div>`);
   });
 
   let mermaidConf = {
@@ -176,13 +139,18 @@ function blogPostInit() {
   mermaid.initialize(mermaidConf);
 
   /* ChartJs */
-  $("pre").has("code.language-chart").each(function () {
-    let svgCode = $(this).children().html();
+  // 
+  $("pre.language-chart").each(function () {
+    // let svgCode = $(this).children().html();
+    let svgCode = "";
+    $(this).children("ol").children("li").each(function () {
+            svgCode = svgCode + $(this).text() + "\n";
+    });
     let jsonObject = JSON.parse(svgCode);
     let containerElt = document.createElement('canvas');
     let ctx = containerElt.getContext('2d'); // canvas.getContext 测试浏览器是否支持 canvas，返回CanvasRenderingContext2D对象
     new Chart(ctx, jsonObject);
-    $(this).replaceWith(containerElt); // $(selectorA).replaceWitj(dom); $(this).after(containerElt); $(this).remove();
+    $(this).parent().replaceWith(containerElt); // $(selectorA).replaceWitj(dom); $(this).after(containerElt); $(this).remove();
   });
 
   /* Magnific Popup */
@@ -190,4 +158,15 @@ function blogPostInit() {
     $(this).attr("href", $(this).attr("src"));
   });
   $("img").magnificPopup({type:'image'});
+  
+  //table
+  $('table').each(function () { this.classList.add('table'); this.classList.add('table-hover'); });
+
+  //check box
+  /* hide browser default checkbox */
+  $("input[type=checkbox]").addClass("unloaded");
+  /* create checked checkbox */
+  $("input[type=checkbox][checked]").before("<i class=\"fas fa-check-circle checked\"></i>");
+  /* create normal checkbox */
+  $("input[type=checkbox]:not([checked])").before("<i class=\"far fa-circle\"></i>");
 }
