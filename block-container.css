@@ -34,6 +34,25 @@ code[class*="language-"], pre[class*="language-"] {
   /* Override BS Inline-code style */
 }
 
+.katex-display .tag {
+  margin-right: inherit;
+  padding: inherit;
+  line-height: inherit;
+  border: none !important;
+  box-shadow: none;
+  
+}
+
+.katex-display .tag:hover {
+  background: none;
+}
+
+.katex-display .tag span {
+  margin-left: 0;
+  font-size: inherit;
+  font-family: inherit;
+}
+
 .mermaid {
   max-width: 960px;
   margin:0 auto;

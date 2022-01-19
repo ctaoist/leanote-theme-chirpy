@@ -1,7 +1,3 @@
-html[mode=dark] pre[class*="language-"], html[mode=dark] :not(pre) > code[class*="language-"] {
-	background: hsl(30, 20%, 25%);
-}
-
 /* Code blocks */
 html[mode=dark] pre[class*="language-"] {
 	padding: 1em;
