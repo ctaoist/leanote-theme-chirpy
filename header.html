@@ -54,7 +54,9 @@
 
 <script src="{{$.themeBaseUrl}}/topbar.js"></script>
 <script src="{{$.themeBaseUrl}}/search.js"></script>
+{{if not $.curIsPost}}
 <link href="{{$.themeBaseUrl}}/style.css" rel="stylesheet">
+{{end}}
 <style>
 #search-results .post-tags a {
   font-size: 0.85rem;

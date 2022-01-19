@@ -159,10 +159,14 @@ function blogPostInit() {
   });
   $("img").magnificPopup({type:'image'});
   
-  //table
-  $('table').each(function () { this.classList.add('table'); this.classList.add('table-hover'); });
+  //Table
+  // $('table').each(function () { this.classList.add('table'); this.classList.add('table-hover'); });
+  $('table').each(function () {
+    $(this).wrap('<div class="table-wrapper"/>');
+  });
 
   //check box
+  $('li.task-list-item').attr('hide-bullet', '');
   /* hide browser default checkbox */
   $("input[type=checkbox]").addClass("unloaded");
   /* create checked checkbox */

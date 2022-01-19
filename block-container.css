@@ -1,11 +1,29 @@
 pre ol li span {
-    color: #333;
+  color: #212529;
 }
-pre[class*="language-"] {
+html[mode=dark] pre ol li span {
+  color: #bfbfbf;
+}
+pre.prettyprint ol.linenums li { /*行号颜色*/
+  color: var(--highlight-lineno-color);
+}
+pre.prettyprint {
+  border: none;
+}
+code {
+  background-color: var(--inline-code-bg);
+}
+html[mode=dark] code {
+  color: var(--highlighter-rouge-color);
+}
+code[class*="language-"], pre[class*="language-"] {
     background: transparent;
     margin: 0;
     outline: none;
     font-size: 0.85rem;
+    text-shadow: none;
+    word-break: break-all;
+    box-shadow: none;
 }
 .token.operator {
   background: transparent;

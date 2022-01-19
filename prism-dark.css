@@ -1,0 +1,66 @@
+html[mode=dark] pre[class*="language-"], html[mode=dark] :not(pre) > code[class*="language-"] {
+	background: hsl(30, 20%, 25%);
+}
+
+/* Code blocks */
+html[mode=dark] pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: .5em;
+}
+
+/* Inline code */
+html[mode=dark] :not(pre) > code[class*="language-"] {
+	padding: .15em .2em .05em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+html[mode=dark] .token.comment, html[mode=dark] .token.prolog, html[mode=dark] .token.doctype, html[mode=dark] .token.cdata {
+	color: hsl(30, 20%, 50%);
+}
+
+html[mode=dark] .token.punctuation {
+	opacity: .7;
+}
+
+html[mode=dark] .token.namespace {
+	opacity: .7;
+}
+
+html[mode=dark] .token.property, html[mode=dark] .token.tag, html[mode=dark] .token.boolean, html[mode=dark] .token.number, html[mode=dark] .token.constant, html[mode=dark] .token.symbol {
+	color: hsl(350, 40%, 70%);
+}
+
+html[mode=dark] .token.selector, html[mode=dark] .token.attr-name, html[mode=dark] .token.string, html[mode=dark] .token.char, html[mode=dark] .token.builtin, html[mode=dark] .token.inserted {
+	color: hsl(75, 70%, 60%);
+}
+
+html[mode=dark] .token.operator, html[mode=dark] .token.entity, html[mode=dark] .token.url, html[mode=dark] .language-css html[mode=dark] .token.string, html[mode=dark] .style html[mode=dark] .token.string, html[mode=dark] .token.variable {
+	color: hsl(40, 90%, 60%);
+}
+
+html[mode=dark] .token.atrule, html[mode=dark] .token.attr-value, html[mode=dark] .token.keyword {
+	color: hsl(350, 40%, 70%);
+}
+
+html[mode=dark] .token.regex, html[mode=dark] .token.important {
+	color: #e90;
+}
+
+html[mode=dark] .token.important, html[mode=dark] .token.bold {
+	font-weight: bold;
+}
+
+html[mode=dark] .token.italic {
+	font-style: italic;
+}
+
+html[mode=dark] .token.entity {
+	cursor: help;
+}
+
+html[mode=dark] .token.deleted {
+	color: red;
+}
