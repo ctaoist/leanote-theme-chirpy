@@ -124,17 +124,17 @@
 <script src="//cdn.jsdelivr.net/npm/prismjs@1/prism.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/prismjs@1/components.js"></script>
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/prismjs@1/themes/prism.min.css">
-<link href="//cdn.jsdelivr.net/gh/ctaoist/leanote@cdev/public/libs/google-code-prettify/prettify.min.css" type="text/css" rel="stylesheet"/>
+<link href="//cdn.jsdelivr.net/gh/ctaoist/leanote@2.7.2/public/libs/google-code-prettify/prettify.min.css" type="text/css" rel="stylesheet"/>
 <!-- Katex -->
 <script src="https://cdn.jsdelivr.net/npm/katex@0.15/dist/katex.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15/dist/katex.min.css">
 <!-- Markdown It -->
 <script src="//cdn.jsdelivr.net/npm/markdown-it@12/dist/markdown-it.min.js"></script>
-<script src="//cdn.jsdelivr.net/gh/ctaoist/leanote@cdev/public/libs/markdown-it/plugins/markdown-it-emoji.min.js"></script>
-<script src="//cdn.jsdelivr.net/gh/ctaoist/leanote@cdev/public/libs/markdown-it/plugins/katex.js"></script>
-<script src="//cdn.jsdelivr.net/gh/ctaoist/leanote@cdev/public/libs/markdown-it/plugins/markdown-it-container.min.js"></script>
-<script src="//cdn.jsdelivr.net/gh/ctaoist/leanote@cdev/public/libs/markdown-it/plugins/markdown-it-task-lists.min.js"></script>
-<script src="//cdn.jsdelivr.net/gh/ctaoist/leanote@cdev/public/libs/markdown-it/plugins/prismjs.js"></script>
+<script src="//cdn.jsdelivr.net/gh/ctaoist/leanote@2.7.2/public/libs/markdown-it/plugins/markdown-it-emoji.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/ctaoist/leanote@2.7.2/public/libs/markdown-it/plugins/katex.js"></script>
+<script src="//cdn.jsdelivr.net/gh/ctaoist/leanote@2.7.2/public/libs/markdown-it/plugins/markdown-it-container.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/ctaoist/leanote@2.7.2/public/libs/markdown-it/plugins/markdown-it-task-lists.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/ctaoist/leanote@2.7.2/public/libs/markdown-it/plugins/prismjs.js"></script>
 {{else}}
 <!-- <link href="{{$.prettifyCssUrl}}" type="text/css" rel="stylesheet"/> -->
 <!-- <script src="{{$.prettifyJsUrl}}"></script> -->
@@ -172,7 +172,7 @@
 
 <!-- markdown 调用markdown来解析得到html -->
 {{if $.post.IsMarkdown }}
-<!-- <script src="//cdn.jsdelivr.net/gh/ctaoist/leanote@cdev/public/libs/md2html/md2html_no_escape.min.js"></script> -->
+<!-- <script src="//cdn.jsdelivr.net/gh/ctaoist/leanote@2.7.0/public/libs/md2html/md2html_no_escape.min.js"></script> -->
 <script>
 var content = $.trim($("#markdownContent textarea").val());
 var markdownit = window.markdownit({
