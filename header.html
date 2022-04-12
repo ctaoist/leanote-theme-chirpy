@@ -202,14 +202,15 @@ $(function () {
       <a id="mode-toggle-wrapper" tabindex="0" onclick="flipMode()">
         <i class="mode-toggle fas fa-adjust"></i>
       </a>
+      <span class="icon-border"></span>
       {{ if $.themeInfo.SocialLinks }}
-        <span class="icon-border"></span>
         {{ range $.themeInfo.SocialLinks }}
           <a href="{{.Url}}" aria-label="{{.Title}}">
             <i class="fab fa-{{.Title}}"></i>
           </a>
         {{ end }} <!-- end range -->
       {{ end }} <!-- end if -->
+      <a href="{{$.rssUrl}}" aria-label="rss"><i class="fas fa-rss"></i></a>
 
   </div> <!-- .sidebar-bottom -->
 </div><!-- #sidebar -->

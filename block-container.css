@@ -23,6 +23,8 @@ code[class*="language-"], pre[class*="language-"] {
     font-size: 0.85rem;
     text-shadow: none;
     word-break: break-all;
+    word-wrap: break-word;
+    white-space: pre-wrap;
     box-shadow: none;
 }
 .token.operator {
