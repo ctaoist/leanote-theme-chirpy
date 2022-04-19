@@ -17,7 +17,7 @@
 * Title 站点标题
 * SocialLinks 社交连接
 * SubTitle: 站点子标题
-* CDN: 留空则使用 local js，需要服务端版本 >= 2.7.2
+* CDN: Name留空则使用 local js，需要服务端版本 >= 2.7.2; jsdelivr 可指定网址 cdn.jsdelivr.net jsdelivr.panbaidu.cn
 * ReadNumType: 阅读计数的方式：Leanote, Leacloud, 空字符串则关闭阅读统计
 * GoogleAnalytics: Google 分析
 * CommentType: 评论类型：Valine, Gitalk, Disqus, 空字符串则关闭评论
@@ -25,7 +25,7 @@
 */
 {
     "Name": "Chirpy",
-    "Version": "1.0.1",
+    "Version": "1.1.3",
     "Author": "Ctaoist",
     "Icon": "avatar.jpg",
     "Avatar": "avatar.jpg",
@@ -33,7 +33,10 @@
     "PostAuthor": "ctaoist",
     "Title": "不见春山",
     "SubTitle": "骑马倚斜桥，满楼红袖招。",
-    "CDN": "",
+    "CDN": {
+        "Name": "jsdelivr",
+        "Url": "jsdelivr.panbaidu.cn"
+    },
     "ReadNumType": "",
     "GoogleAnalytics": {
         "Id": ""
@@ -58,11 +61,5 @@
     "SocialLinks": [
         {"Title": "github", "Url": "https://github.com/ctaoist"},
         {"Title": "twitter", "Url": "https://twitter.com/a275761919"}
-    ],
-    "FriendLinks": [
-        {"Title": "Leanote Home", "Url": "http://leanote.com"},
-        {"Title": "Leanote Comunity", "Url": "https://groups.google.com/forum/?fromgroups#!forum/leanote"},
-        {"Title": "lea++", "Url": "http://lea.leanote.com"},
-        {"Title": "Leanote Github", "Url": "https://github.com/leanote/leanote"}
     ]
 }

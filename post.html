@@ -107,34 +107,37 @@
 <!-- {{template "mathjax.html" .}} -->
 <div id="isPost"></div>
 
-{{if eq $.themeInfo.CDN "jsdelivr"}}
+{{if eq $.themeInfo.CDN.Name "jsdelivr"}}
+<script>
+  // var CDN_URL = "{{$.themeInfo.CDN.Url}}";
+</script>
 <!-- 只有post才需要，从 Header 中移到这里 -->
 <!--clibboard-->
-<script src="//cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script src="//{{$.themeInfo.CDN.Url}}/npm/clipboard@2/dist/clipboard.min.js"></script>
 <!-- Bootstrap-Toc -->
-<script src="//cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css">
+<script src="//{{$.themeInfo.CDN.Url}}/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script>
+<link rel="stylesheet" href="https://{{$.themeInfo.CDN.Url}}/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css">
 <!--Mermaid and ChartJs -->
-<script src="//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/chart.js@3/dist/chart.min.js"></script>
+<script src="//{{$.themeInfo.CDN.Url}}/npm/mermaid@8/dist/mermaid.min.js"></script>
+<script src="//{{$.themeInfo.CDN.Url}}/npm/chart.js@3/dist/chart.min.js"></script>
 <!-- Manific Popup -->
-<script src="https://cdn.jsdelivr.net/npm/magnific-popup@1/dist/jquery.magnific-popup.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1/dist/magnific-popup.min.css">
+<script src="https://{{$.themeInfo.CDN.Url}}/npm/magnific-popup@1/dist/jquery.magnific-popup.min.js"></script>
+<link rel="stylesheet" href="https://{{$.themeInfo.CDN.Url}}/npm/magnific-popup@1/dist/magnific-popup.min.css">
 <!-- Prism Highlight -->
-<script src="//cdn.jsdelivr.net/npm/prismjs@1/prism.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/prismjs@1/components.js"></script>
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/prismjs@1/themes/prism.min.css">
-<link href="//cdn.jsdelivr.net/gh/ctaoist/leanote@2.7.2/public/libs/google-code-prettify/prettify.min.css" type="text/css" rel="stylesheet"/>
+<script src="//{{$.themeInfo.CDN.Url}}/npm/prismjs@1.26.0/prism.min.js"></script>
+<script src="//{{$.themeInfo.CDN.Url}}/npm/prismjs@1.26.0/components.js"></script>
+<link rel="stylesheet" href="//{{$.themeInfo.CDN.Url}}/npm/prismjs@1.26.0/themes/prism.min.css">
+<link href="//{{$.themeInfo.CDN.Url}}/gh/ctaoist/leanote@2.7.2/public/libs/google-code-prettify/prettify.min.css" type="text/css" rel="stylesheet"/>
 <!-- Katex -->
-<script src="https://cdn.jsdelivr.net/npm/katex@0.15/dist/katex.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15/dist/katex.min.css">
+<script src="https://{{$.themeInfo.CDN.Url}}/npm/katex@0.15/dist/katex.min.js"></script>
+<link rel="stylesheet" href="https://{{$.themeInfo.CDN.Url}}/npm/katex@0.15/dist/katex.min.css">
 <!-- Markdown It -->
-<script src="//cdn.jsdelivr.net/npm/markdown-it@12/dist/markdown-it.min.js"></script>
-<script src="//cdn.jsdelivr.net/gh/ctaoist/leanote@2.7.2/public/libs/markdown-it/plugins/markdown-it-emoji.min.js"></script>
-<script src="//cdn.jsdelivr.net/gh/ctaoist/leanote@2.7.2/public/libs/markdown-it/plugins/katex.js"></script>
-<script src="//cdn.jsdelivr.net/gh/ctaoist/leanote@2.7.2/public/libs/markdown-it/plugins/markdown-it-container.min.js"></script>
-<script src="//cdn.jsdelivr.net/gh/ctaoist/leanote@2.7.2/public/libs/markdown-it/plugins/markdown-it-task-lists.min.js"></script>
-<script src="//cdn.jsdelivr.net/gh/ctaoist/leanote@2.7.2/public/libs/markdown-it/plugins/prismjs.js"></script>
+<script src="//{{$.themeInfo.CDN.Url}}/npm/markdown-it@12/dist/markdown-it.min.js"></script>
+<script src="//{{$.themeInfo.CDN.Url}}/gh/ctaoist/leanote@2.7.4/public/libs/markdown-it/plugins/markdown-it-emoji.min.js"></script>
+<script src="//{{$.themeInfo.CDN.Url}}/gh/ctaoist/leanote@2.7.4/public/libs/markdown-it/plugins/katex.js"></script>
+<script src="//{{$.themeInfo.CDN.Url}}/gh/ctaoist/leanote@2.7.4/public/libs/markdown-it/plugins/markdown-it-container.min.js"></script>
+<script src="//{{$.themeInfo.CDN.Url}}/gh/ctaoist/leanote@2.7.4/public/libs/markdown-it/plugins/markdown-it-task-lists.min.js"></script>
+<script src="//{{$.themeInfo.CDN.Url}}/gh/ctaoist/leanote@2.7.4/public/libs/markdown-it/plugins/prismjs.js"></script>
 {{else}}
 <!-- <link href="{{$.prettifyCssUrl}}" type="text/css" rel="stylesheet"/> -->
 <!-- <script src="{{$.prettifyJsUrl}}"></script> -->
@@ -172,7 +175,7 @@
 
 <!-- markdown 调用markdown来解析得到html -->
 {{if $.post.IsMarkdown }}
-<!-- <script src="//cdn.jsdelivr.net/gh/ctaoist/leanote@2.7.0/public/libs/md2html/md2html_no_escape.min.js"></script> -->
+<!-- <script src="//{{$.themeInfo.CDN.Url}}/gh/ctaoist/leanote@2.7.0/public/libs/md2html/md2html_no_escape.min.js"></script> -->
 <script>
 var content = $.trim($("#markdownContent textarea").val());
 var markdownit = window.markdownit({
