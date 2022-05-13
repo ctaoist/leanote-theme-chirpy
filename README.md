@@ -26,6 +26,7 @@
 - Mermaid、ChartJs 图表
 - Google 分析
 - 博文置顶
+- jsdelivr 自定义CDN地址
 
 ## 安装
 

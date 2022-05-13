@@ -35,7 +35,7 @@
     "SubTitle": "骑马倚斜桥，满楼红袖招。",
     "CDN": {
         "Name": "jsdelivr",
-        "Url": "jsdelivr.panbaidu.cn"
+        "Url": "cdn.jsdelivr.net"
     },
     "ReadNumType": "",
     "GoogleAnalytics": {
