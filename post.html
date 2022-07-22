@@ -217,6 +217,20 @@ $(function() {
 });
 </script>
 {{end}}
+<script type="text/javascript">
+  $(document).on('click', 'a', function() {
+    var target = this.getAttribute('target');
 
+    if ( target ) {
+      return;
+    }
+
+    var href = this.href;
+
+    if ( href.indexOf(location.origin) === -1 ) {
+      this.setAttribute('target', '_blank');
+    }
+});
+</script>
 </body>
 </html>
