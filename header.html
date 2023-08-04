@@ -1,142 +1,142 @@
 <!DOCTYPE html>
 <html lang="{{$.locale}}">
 <head>
-<!-- <meta charset="utf-8"> -->
-<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="ctaoist">
-<link rel="Shortcut icon" href="{{$.themeBaseUrl}}/images/{{$.themeInfo.Icon}}">
+  <!-- <meta charset="utf-8"> -->
+  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="ctaoist">
+  <link rel="Shortcut icon" href="{{$.themeBaseUrl}}/images/{{$.themeInfo.Icon}}">
 
-<title>
-  {{if $.curIsIndex}}
-      {{$.blogInfo.Title}}
-  {{else if $.curIsCate}}
-      Category-{{$.curCateTitle}}
-  {{else if $.curIsSearch}}
-      Search-{{$.keywords}}
-  {{else if $.curIsTags}}
-      Tags
-  {{else if $.curIsCates}}
-      Categories
-  {{else if $.curIsTagPosts}}
-      Tag-{{$.curTag}}
-  {{else if $.curIsPost}}
+  <title>
+    {{if $.curIsIndex}}
+    {{$.blogInfo.Title}}
+    {{else if $.curIsCate}}
+    Category-{{$.curCateTitle}}
+    {{else if $.curIsSearch}}
+    Search-{{$.keywords}}
+    {{else if $.curIsTags}}
+    Tags
+    {{else if $.curIsCates}}
+    Categories
+    {{else if $.curIsTagPosts}}
+    Tag-{{$.curTag}}
+    {{else if $.curIsPost}}
     {{$.post.Title}}
-  {{else if $.curIsSingle}}
+    {{else if $.curIsSingle}}
     {{$.single.Title}}
-  {{else if $.curIsArchive}}
+    {{else if $.curIsArchive}}
     Archives
+    {{end}}
+  </title>
+  {{ if eq $.themeInfo.CDN.Name "jsdelivr" }}
+  <!-- jsDelivr CDN -->
+  <link rel="preconnect" href="https://{{$.themeInfo.CDN.Url}}">
+  <link rel="dns-prefetch" href="https://{{$.themeInfo.CDN.Url}}">
+  <!-- JavaScript -->
+  <script src="https://{{$.themeInfo.CDN.Url}}/npm/jquery@3/dist/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="https://{{$.themeInfo.CDN.Url}}/combine/npm/popper.js@1.16.1,npm/bootstrap@4/dist/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://{{$.themeInfo.CDN.Url}}/npm/bootstrap@4/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://{{$.themeInfo.CDN.Url}}/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+  <!-- <script async src="https://{{$.themeInfo.CDN.Url}}/npm/countup.js@1.9.3/dist/countUp.min.js"></script> -->
+  <!-- <script src="https://{{$.themeInfo.CDN.Url}}/npm/xregexp@5/xregexp-all.min.js"></script> -->
+  <!-- <script src="https://{{$.themeInfo.CDN.Url}}/combine/npm/lozad/dist/lozad.min.js"></script> -->
+  {{else}}
+  <script src="/libs/jquery/jquery-1.9.0.min.js"></script>
+  <script src="/libs/popper.min.js"></script>
+  <script src="/libs/bootstrap/bootstrap-4.6.1.min.js"></script>
+  <link rel="stylesheet" href="/libs/bootstrap/bootstrap-4.6.1.min.css">
+  <link rel="stylesheet" href="/fonts/font-awesome-5.15.4/css/all.min.css">
   {{end}}
-</title>
-{{ if eq $.themeInfo.CDN.Name "jsdelivr" }}
-<!-- jsDelivr CDN -->
-<link rel="preconnect" href="https://{{$.themeInfo.CDN.Url}}">
-<link rel="dns-prefetch" href="https://{{$.themeInfo.CDN.Url}}">
-<!-- JavaScript -->
-<script src="https://{{$.themeInfo.CDN.Url}}/npm/jquery@3/dist/jquery.min.js"></script>
-<!-- Bootstrap -->
-<script src="https://{{$.themeInfo.CDN.Url}}/combine/npm/popper.js@1.16.1,npm/bootstrap@4/dist/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="https://{{$.themeInfo.CDN.Url}}/npm/bootstrap@4/dist/css/bootstrap.min.css">
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://{{$.themeInfo.CDN.Url}}/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
 
-<!-- <script async src="https://{{$.themeInfo.CDN.Url}}/npm/countup.js@1.9.3/dist/countUp.min.js"></script> -->
-<!-- <script src="https://{{$.themeInfo.CDN.Url}}/npm/xregexp@5/xregexp-all.min.js"></script> -->
-<!-- <script src="https://{{$.themeInfo.CDN.Url}}/combine/npm/lozad/dist/lozad.min.js"></script> -->
-{{else}}
-<script src="/libs/jquery/jquery-1.9.0.min.js"></script>
-<script src="/libs/popper.min.js"></script>
-<script src="/libs/bootstrap/bootstrap-4.6.1.min.js"></script>
-<link rel="stylesheet" href="/libs/bootstrap/bootstrap-4.6.1.min.css">
-<link rel="stylesheet" href="/fonts/font-awesome-5.15.4/css/all.min.css">
-{{end}}
+  <script src="{{$.themeBaseUrl}}/topbar.js"></script>
+  <script src="{{$.themeBaseUrl}}/search.js"></script>
+  <link href="{{$.themeBaseUrl}}/style.css" rel="stylesheet">
 
-<script src="{{$.themeBaseUrl}}/topbar.js"></script>
-<script src="{{$.themeBaseUrl}}/search.js"></script>
-<link href="{{$.themeBaseUrl}}/style.css" rel="stylesheet">
-
-<style>
-#search-results .post-tags a {
-  font-size: 0.85rem;
-  line-height: 0.85rem;
-}
-</style>
-
-{{ if $.themeInfo.GoogleAnalytics.Id }}
-<!-- Google Analytics -->
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  
-  ga('create', '{{ $.themeInfo.GoogleAnalytics.Id }}', 'auto');
-  ga('send', 'pageview');
-</script>
-<!-- End Google Analytics -->
-{{ end }}
-
-<script>
-$(function () {
-  // 初始化 tooltip
-  $('[data-toggle="tooltip"]').tooltip();
-
-  // back-to-top
-  $(window).scroll(() => {
-    if ($(this).scrollTop() > 50 && $("#sidebar-trigger").css("display") === "none") {
-      $("#back-to-top").fadeIn();
-    } else {
-      $("#back-to-top").fadeOut();
+  <style>
+    #search-results .post-tags a {
+      font-size: 0.85rem;
+      line-height: 0.85rem;
     }
-  });
-  $("#back-to-top").click(() => {
-    $("body,html").animate({ scrollTop: 0 }, 800);
-    return false;
-  });
+  </style>
 
-  // search
-  const input = $("#search-input");
-  const btnClear = $("#search-cleaner");
-  const searchWrapper = $("#search-wrapper");
-  if (input.val() !== "") {
-    if (!btnClear.hasClass("visible")) { btnClear.addClass("visible"); }
-  }
-  input.on("keyup", function (e) {
-    if (input.val() !== "") {
-      if (!btnClear.hasClass("visible")) { btnClear.addClass("visible"); }
-    }
-  });
-  btnClear.on("click", function () {
-    input.val("");
-    input.focus(); searchWrapper.addClass("input-focus");
-    btnClear.removeClass("visible");
-  });
+  {{ if $.themeInfo.GoogleAnalytics.Id }}
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  // Expand or close the sidebar in mobile screens.
-  const sidebarUtil = (function () {
-    const ATTR_DISPLAY = "sidebar-display";
-    let isExpanded = false;
-    const body = $("body");
-    return {
-      toggle() {
-        if (isExpanded === false) {
-          body.attr(ATTR_DISPLAY, "");
+    ga('create', '{{ $.themeInfo.GoogleAnalytics.Id }}', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <!-- End Google Analytics -->
+  {{ end }}
+
+  <script>
+    $(function () {
+      // 初始化 tooltip
+      $('[data-toggle="tooltip"]').tooltip();
+
+      // back-to-top
+      $(window).scroll(() => {
+        if ($(this).scrollTop() > 50 && $("#sidebar-trigger").css("display") === "none") {
+          $("#back-to-top").fadeIn();
         } else {
-          body.removeAttr(ATTR_DISPLAY);
+          $("#back-to-top").fadeOut();
         }
-        isExpanded = !isExpanded;
+      });
+      $("#back-to-top").click(() => {
+        $("body,html").animate({ scrollTop: 0 }, 800);
+        return false;
+      });
+
+      // search
+      const input = $("#search-input");
+      const btnClear = $("#search-cleaner");
+      const searchWrapper = $("#search-wrapper");
+      if (input.val() !== "") {
+        if (!btnClear.hasClass("visible")) { btnClear.addClass("visible"); }
       }
-    };
-  }());
-  $("#sidebar-trigger").click(sidebarUtil.toggle);
-  $("#mask").click(sidebarUtil.toggle);
-});
-</script>
+      input.on("keyup", function (e) {
+        if (input.val() !== "") {
+          if (!btnClear.hasClass("visible")) { btnClear.addClass("visible"); }
+        }
+      });
+      btnClear.on("click", function () {
+        input.val("");
+        input.focus(); searchWrapper.addClass("input-focus");
+        btnClear.removeClass("visible");
+      });
+
+      // Expand or close the sidebar in mobile screens.
+      const sidebarUtil = (function () {
+        const ATTR_DISPLAY = "sidebar-display";
+        let isExpanded = false;
+        const body = $("body");
+        return {
+          toggle() {
+            if (isExpanded === false) {
+              body.attr(ATTR_DISPLAY, "");
+            } else {
+              body.removeAttr(ATTR_DISPLAY);
+            }
+            isExpanded = !isExpanded;
+          }
+        };
+      }());
+      $("#sidebar-trigger").click(sidebarUtil.toggle);
+      $("#mask").click(sidebarUtil.toggle);
+    });
+  </script>
 
 </head>
 <body>
-  <!-- data-spy="scroll" data-target="#toc" -->
+<!-- data-spy="scroll" data-target="#toc" -->
 
 <!--sidebar-->
 <div id="sidebar" class="d-flex flex-column align-items-end">
@@ -145,7 +145,7 @@ $(function () {
     <!--头像-->
     <div id="avatar">
       <a href="/" alt="avatar" class="mx-auto">
-      <img src="{{$.themeBaseUrl}}/images/{{$.themeInfo.Avatar}}" alt="avatar" onerror="this.style.display='none'">
+        <img src="{{$.themeBaseUrl}}/images/{{$.themeInfo.Avatar}}" alt="avatar" onerror="this.style.display='none'">
       </a>
     </div>
     <!--profile title-->
@@ -162,35 +162,35 @@ $(function () {
     <li class="nav-item{{if $.curIsIndex}} active{{end}}">
       <a href="{{.indexUrl}}" class="nav-link">
         <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i>
-        <span>Home</span>
+        <span>主页</span>
       </a>
     </li>
     <!-- categories -->
     <li class="nav-item{{if $.curIsCate}} active{{end}}">
       <a href="{{$.catesUrl}}" class="nav-link">
         <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i>
-        <span>Categories</span>
+        <span>分类</span>
       </a>
     </li>
     <!-- 归档 -->
     <li class="nav-item{{if $.curIsArchive}} active{{end}}">
       <a href="{{$.archiveUrl}}" class="nav-link">
-          <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i>
-          <span>Archives</span>
+        <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i>
+        <span>归档</span>
       </a>
     </li>
     <!--标签-->
     <li class="nav-item{{if $.curIsTags}} active{{end}}">
       <a href="{{$.tagsUrl}}" class="nav-link">
         <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i>
-        <span>Tags</span>
+        <span>标签</span>
       </a>
     </li>
     <!--About-->
     <li class="nav-item">
       <a href="{{$.singleUrl}}/About-Me" class="nav-link">
         <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i>
-        <span>About</span>
+        <span>关于</span>
       </a>
     </li>
 
@@ -199,18 +199,18 @@ $(function () {
 
   {{template "model-toggle.html" $}}
   <div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center">
-      <a id="mode-toggle-wrapper" tabindex="0" onclick="flipMode()">
-        <i class="mode-toggle fas fa-adjust"></i>
-      </a>
-      <span class="icon-border"></span>
-      {{ if $.themeInfo.SocialLinks }}
-        {{ range $.themeInfo.SocialLinks }}
-          <a href="{{.Url}}" aria-label="{{.Title}}">
-            <i class="fab fa-{{.Title}}"></i>
-          </a>
-        {{ end }} <!-- end range -->
-      {{ end }} <!-- end if -->
-      <a href="{{$.rssUrl}}" aria-label="rss"><i class="fas fa-rss"></i></a>
+    <a id="mode-toggle-wrapper" tabindex="0" onclick="flipMode()">
+      <i class="mode-toggle fas fa-adjust"></i>
+    </a>
+    <span class="icon-border"></span>
+    {{ if $.themeInfo.SocialLinks }}
+    {{ range $.themeInfo.SocialLinks }}
+    <a href="{{.Url}}" aria-label="{{.Title}}">
+      <i class="fab fa-{{.Title}}"></i>
+    </a>
+    {{ end }} <!-- end range -->
+    {{ end }} <!-- end if -->
+    <a href="{{$.rssUrl}}" aria-label="rss"><i class="fas fa-rss"></i></a>
 
   </div> <!-- .sidebar-bottom -->
 </div><!-- #sidebar -->
@@ -244,21 +244,21 @@ $(function () {
 
     <div id="topbar-title">
       {{if $.curIsIndex}}
-        Home
+      Home
       {{else if $.curIsPost}}
-        {{$.post.Title}}
+      {{$.post.Title}}
       {{else if $.curIsTags}}
-        Tags
+      Tags
       {{else if $.curIsTagPosts}}
-        Tag
+      Tag
       {{else if $.curIsCates}}
-        Categories
+      Categories
       {{else if $.curIsCate}}
-        Categories
+      Categories
       {{else if $.curIsArchive}}
-        Archives
+      Archives
       {{else if $.curIsSingle}}
-        {{$.single.Title}}
+      {{$.single.Title}}
       {{end}}
     </div>
 
@@ -266,9 +266,19 @@ $(function () {
     <form id="search-wrapper" class="align-items-center" onsubmit="search(event);return false;">
       <i class="fas fa-search fa-fw"></i>
       <input class="form-control" id="search-input" type="search" value="{{.keywords}}"
-        aria-label="search" autocomplete="off" placeholder="Search...">
+             aria-label="search" autocomplete="off" placeholder="搜索文章">
       <i class="fa fa-times-circle fa-fw" id="search-cleaner"></i>
     </form>
     <span id="search-cancel" >取消</span>
   </div>
-</div> <!-- topbar-wrapper -->
+</div>
+<!-- topbar-wrapper -->
+
+<!-- bg-wallpaper -->
+<div class="bg-wallpaper" style="background: none;">
+  <video class="wallpaper-video" autoplay="" loop="" poster="https://files.codelife.cc/itab/defaultWallpaper/videos/19.mp4?x-oss-process=video/snapshot,t_1,f_jpg,w_1366,h_768,m_fast" src="https://ubuntu.wouqian.com:9008/common/media/19.mp4"></video>
+  <div class="aplayer-wrapper">
+    <div id="aplayer"></div>
+  </div>
+</div>
+<!-- bg-wallpaper -->
