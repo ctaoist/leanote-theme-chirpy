@@ -3,7 +3,7 @@
 其中Name, Version, Author, AuthorUrl是必填项(注意首字大写)
 你也可以定义其它的配置, 如FriendLinks, 在模板文件使用 $.themeInfo.FriendLinks来获取值
 
-注意: 
+注意:
 1) JSON语法严格, 键必须用双引号, 最后不得有空','来结尾
 2) 以下配置不能包含任何注释, 不然解析会出错!
 
@@ -31,7 +31,7 @@
     "Avatar": "avatar.jpg",
     "AuthorUrl": "https://blog.ctaoist.cn",
     "PostAuthor": "ctaoist",
-    "Title": "不见春山",
+    "Title": "云",
     "SubTitle": "骑马倚斜桥，满楼红袖招。",
     "CDN": {
         "Name": "jsdelivr",
@@ -59,7 +59,6 @@
         }
     },
     "SocialLinks": [
-        {"Title": "github", "Url": "https://github.com/ctaoist"},
-        {"Title": "twitter", "Url": "https://twitter.com/a275761919"}
+        {"Title": "github", "Url": "https://github.com/zhang-yun-jie"}
     ]
 }

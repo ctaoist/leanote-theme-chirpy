@@ -56,6 +56,9 @@
   <script src="{{$.themeBaseUrl}}/search.js"></script>
   <link href="{{$.themeBaseUrl}}/style.css" rel="stylesheet">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css" integrity="sha512-CIYsJUa3pr1eoXlZFroEI0mq0UIMUqNouNinjpCkSWo3Bx5NRlQ0OuC6DtEB/bDqUWnzXc1gs2X/g52l36N5iw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js" integrity="sha512-RWosNnDNw8FxHibJqdFRySIswOUgYhFxnmYO3fp+BgCU7gfo4z0oS7mYFBvaa8qu+axY39BmQOrhW3Tp70XbaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
   <style>
     #search-results .post-tags a {
       font-size: 0.85rem;
@@ -131,6 +134,32 @@
       }());
       $("#sidebar-trigger").click(sidebarUtil.toggle);
       $("#mask").click(sidebarUtil.toggle);
+
+      // APlayer
+      const ap = new APlayer({
+        container: document.getElementById('aplayer'),
+        autoplay: true,
+        theme: 'var(--topbar-wrapper-bg)',
+        volume: 0.2,
+        lrcType: 3,
+        fixed: true,
+        audio: [
+          {
+            name: '开不了口',
+            artist: '周杰伦',
+            lrc: 'https://ubuntu.wouqian.com:5244/d/aliyundrive/%E9%9F%B3%E4%B9%90/%E5%91%A8%E6%9D%B0%E4%BC%A6/2016.05.10%20-%20%E9%AD%94%E5%A4%A9%E4%BC%A6%E4%B8%96%E7%95%8C%E5%B7%A1%E5%9B%9E%E6%BC%94%E5%94%B1%E4%BC%9A%202CD/CD2/%E5%BC%80%E4%B8%8D%E4%BA%86%E5%8F%A3.lrc?sign=4FJeXXXznxJ7qPH2d0DRW7ox8ol3TxBN5lAR33Pve70=:0',
+            url: 'https://ubuntu.wouqian.com:5244/d/aliyundrive/%E9%9F%B3%E4%B9%90/%E5%91%A8%E6%9D%B0%E4%BC%A6/2016.05.10%20-%20%E9%AD%94%E5%A4%A9%E4%BC%A6%E4%B8%96%E7%95%8C%E5%B7%A1%E5%9B%9E%E6%BC%94%E5%94%B1%E4%BC%9A%202CD/CD2/09.%E5%BC%80%E4%B8%8D%E4%BA%86%E5%8F%A3(Live).mp3?sign=Ve7sNltqTtkW4Ch0S-kNKKCSG7FZ_imDh04YuQo-LA0=:0',
+            cover: 'https://ubuntu.wouqian.com:5244/d/aliyundrive/%E9%9F%B3%E4%B9%90/%E5%91%A8%E6%9D%B0%E4%BC%A6/2016.05.10%20-%20%E9%AD%94%E5%A4%A9%E4%BC%A6%E4%B8%96%E7%95%8C%E5%B7%A1%E5%9B%9E%E6%BC%94%E5%94%B1%E4%BC%9A%202CD/cover.jpg?sign=rUVTa0pDCt4xon15qtVMqEKu7ejKFIoUUTlxdC9ul44=:0'
+          },
+          {
+            name: '我是如此的相信',
+            artist: '周杰伦',
+            lrc: 'https://ubuntu.wouqian.com:5244/d/aliyundrive/%E9%9F%B3%E4%B9%90/%E5%91%A8%E6%9D%B0%E4%BC%A6/%E5%91%A8%E6%9D%B0%E4%BC%A6%20-%20%E5%85%B6%E4%BB%96%E5%8D%95%E6%9B%B2/%E6%88%91%E6%98%AF%E5%A6%82%E6%AD%A4%E7%9B%B8%E4%BF%A1%20(I%20Truly%20Believe)/%E9%85%B7%E6%AD%8C%E8%AF%8D%20kugeci.com_%E6%88%91%E6%98%AF%E5%A6%82%E6%AD%A4%E7%9B%B8%E4%BF%A1.lrc?sign=lB3EQhPVbCE97uVJnkPVfwVN62qBEo8xZWgYefkj948=:0',
+            url: 'https://mp3.t57.cn:7087/music/113/83728113.m4a',
+            cover: 'https://ubuntu.wouqian.com:5244/d/aliyundrive/%E9%9F%B3%E4%B9%90/%E5%91%A8%E6%9D%B0%E4%BC%A6/%E5%91%A8%E6%9D%B0%E4%BC%A6%20-%20%E5%85%B6%E4%BB%96%E5%8D%95%E6%9B%B2/%E6%88%91%E6%98%AF%E5%A6%82%E6%AD%A4%E7%9B%B8%E4%BF%A1%20(I%20Truly%20Believe)/%E6%88%91%E6%98%AF%E5%A6%82%E6%AD%A4%E7%9B%B8%E4%BF%A1.jpg?sign=RPW3UisrvVLvdVfz3KGH_X2JEpuYwrkLflxglvm42gQ=:0'
+          }
+        ]
+      });
     });
   </script>
 
@@ -276,7 +305,7 @@
 
 <!-- bg-wallpaper -->
 <div class="bg-wallpaper" style="background: none;">
-  <video class="wallpaper-video" autoplay="" loop="" poster="https://files.codelife.cc/itab/defaultWallpaper/videos/19.mp4?x-oss-process=video/snapshot,t_1,f_jpg,w_1366,h_768,m_fast" src="https://ubuntu.wouqian.com:9008/common/media/19.mp4"></video>
+  <video class="wallpaper-video" autoplay="" loop="" poster="https://files.codelife.cc/itab/defaultWallpaper/videos/21.mp4?x-oss-process=video/snapshot,t_1,f_jpg,w_1366,h_768,m_fast" src="https://cdn.jsdelivr.net/gh/zhang-yun-jie/cdn/common/202308041654618.mp4"></video>
   <div class="aplayer-wrapper">
     <div id="aplayer"></div>
   </div>

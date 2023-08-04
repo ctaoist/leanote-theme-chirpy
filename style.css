@@ -725,7 +725,7 @@ html[mode=dark] kbd {
 
 @media (prefers-color-scheme: dark) {
   html:not([mode]),
-html[mode=dark] {
+  html[mode=dark] {
     /* syntax highlight colors from https://raw.githubusercontent.com/jwarby/pygments-css/master/monokai.css */
     /* Comment */
     /* Error */
@@ -800,271 +800,271 @@ html[mode=dark] {
     /* override Bootstrap */
   }
   html:not([mode]) .highlight pre,
-html[mode=dark] .highlight pre {
+  html[mode=dark] .highlight pre {
     background-color: var(--highlight-bg-color);
   }
   html:not([mode]) .highlight .hll,
-html[mode=dark] .highlight .hll {
+  html[mode=dark] .highlight .hll {
     background-color: var(--highlight-bg-color);
   }
   html:not([mode]) .highlight .c,
-html[mode=dark] .highlight .c {
+  html[mode=dark] .highlight .c {
     color: #75715e;
   }
   html:not([mode]) .highlight .err,
-html[mode=dark] .highlight .err {
+  html[mode=dark] .highlight .err {
     color: #960050;
     background-color: #1e0010;
   }
   html:not([mode]) .highlight .k,
-html[mode=dark] .highlight .k {
+  html[mode=dark] .highlight .k {
     color: #66d9ef;
   }
   html:not([mode]) .highlight .l,
-html[mode=dark] .highlight .l {
+  html[mode=dark] .highlight .l {
     color: #ae81ff;
   }
   html:not([mode]) .highlight .n,
-html[mode=dark] .highlight .n {
+  html[mode=dark] .highlight .n {
     color: #f8f8f2;
   }
   html:not([mode]) .highlight .o,
-html[mode=dark] .highlight .o {
+  html[mode=dark] .highlight .o {
     color: #f92672;
   }
   html:not([mode]) .highlight .p,
-html[mode=dark] .highlight .p {
+  html[mode=dark] .highlight .p {
     color: #f8f8f2;
   }
   html:not([mode]) .highlight .cm,
-html[mode=dark] .highlight .cm {
+  html[mode=dark] .highlight .cm {
     color: #75715e;
   }
   html:not([mode]) .highlight .cp,
-html[mode=dark] .highlight .cp {
+  html[mode=dark] .highlight .cp {
     color: #75715e;
   }
   html:not([mode]) .highlight .c1,
-html[mode=dark] .highlight .c1 {
+  html[mode=dark] .highlight .c1 {
     color: #75715e;
   }
   html:not([mode]) .highlight .cs,
-html[mode=dark] .highlight .cs {
+  html[mode=dark] .highlight .cs {
     color: #75715e;
   }
   html:not([mode]) .highlight .ge,
-html[mode=dark] .highlight .ge {
+  html[mode=dark] .highlight .ge {
     color: inherit;
     font-style: italic;
   }
   html:not([mode]) .highlight .gs,
-html[mode=dark] .highlight .gs {
+  html[mode=dark] .highlight .gs {
     font-weight: bold;
   }
   html:not([mode]) .highlight .kc,
-html[mode=dark] .highlight .kc {
+  html[mode=dark] .highlight .kc {
     color: #66d9ef;
   }
   html:not([mode]) .highlight .kd,
-html[mode=dark] .highlight .kd {
+  html[mode=dark] .highlight .kd {
     color: #66d9ef;
   }
   html:not([mode]) .highlight .kn,
-html[mode=dark] .highlight .kn {
+  html[mode=dark] .highlight .kn {
     color: #f92672;
   }
   html:not([mode]) .highlight .kp,
-html[mode=dark] .highlight .kp {
+  html[mode=dark] .highlight .kp {
     color: #66d9ef;
   }
   html:not([mode]) .highlight .kr,
-html[mode=dark] .highlight .kr {
+  html[mode=dark] .highlight .kr {
     color: #66d9ef;
   }
   html:not([mode]) .highlight .kt,
-html[mode=dark] .highlight .kt {
+  html[mode=dark] .highlight .kt {
     color: #66d9ef;
   }
   html:not([mode]) .highlight .ld,
-html[mode=dark] .highlight .ld {
+  html[mode=dark] .highlight .ld {
     color: #e6db74;
   }
   html:not([mode]) .highlight .m,
-html[mode=dark] .highlight .m {
+  html[mode=dark] .highlight .m {
     color: #ae81ff;
   }
   html:not([mode]) .highlight .s,
-html[mode=dark] .highlight .s {
+  html[mode=dark] .highlight .s {
     color: #e6db74;
   }
   html:not([mode]) .highlight .na,
-html[mode=dark] .highlight .na {
+  html[mode=dark] .highlight .na {
     color: #a6e22e;
   }
   html:not([mode]) .highlight .nb,
-html[mode=dark] .highlight .nb {
+  html[mode=dark] .highlight .nb {
     color: #f8f8f2;
   }
   html:not([mode]) .highlight .nc,
-html[mode=dark] .highlight .nc {
+  html[mode=dark] .highlight .nc {
     color: #a6e22e;
   }
   html:not([mode]) .highlight .no,
-html[mode=dark] .highlight .no {
+  html[mode=dark] .highlight .no {
     color: #66d9ef;
   }
   html:not([mode]) .highlight .nd,
-html[mode=dark] .highlight .nd {
+  html[mode=dark] .highlight .nd {
     color: #a6e22e;
   }
   html:not([mode]) .highlight .ni,
-html[mode=dark] .highlight .ni {
+  html[mode=dark] .highlight .ni {
     color: #f8f8f2;
   }
   html:not([mode]) .highlight .ne,
-html[mode=dark] .highlight .ne {
+  html[mode=dark] .highlight .ne {
     color: #a6e22e;
   }
   html:not([mode]) .highlight .nf,
-html[mode=dark] .highlight .nf {
+  html[mode=dark] .highlight .nf {
     color: #a6e22e;
   }
   html:not([mode]) .highlight .nl,
-html[mode=dark] .highlight .nl {
+  html[mode=dark] .highlight .nl {
     color: #f8f8f2;
   }
   html:not([mode]) .highlight .nn,
-html[mode=dark] .highlight .nn {
+  html[mode=dark] .highlight .nn {
     color: #f8f8f2;
   }
   html:not([mode]) .highlight .nx,
-html[mode=dark] .highlight .nx {
+  html[mode=dark] .highlight .nx {
     color: #a6e22e;
   }
   html:not([mode]) .highlight .py,
-html[mode=dark] .highlight .py {
+  html[mode=dark] .highlight .py {
     color: #f8f8f2;
   }
   html:not([mode]) .highlight .nt,
-html[mode=dark] .highlight .nt {
+  html[mode=dark] .highlight .nt {
     color: #f92672;
   }
   html:not([mode]) .highlight .nv,
-html[mode=dark] .highlight .nv {
+  html[mode=dark] .highlight .nv {
     color: #f8f8f2;
   }
   html:not([mode]) .highlight .ow,
-html[mode=dark] .highlight .ow {
+  html[mode=dark] .highlight .ow {
     color: #f92672;
   }
   html:not([mode]) .highlight .w,
-html[mode=dark] .highlight .w {
+  html[mode=dark] .highlight .w {
     color: #f8f8f2;
   }
   html:not([mode]) .highlight .mf,
-html[mode=dark] .highlight .mf {
+  html[mode=dark] .highlight .mf {
     color: #ae81ff;
   }
   html:not([mode]) .highlight .mh,
-html[mode=dark] .highlight .mh {
+  html[mode=dark] .highlight .mh {
     color: #ae81ff;
   }
   html:not([mode]) .highlight .mi,
-html[mode=dark] .highlight .mi {
+  html[mode=dark] .highlight .mi {
     color: #ae81ff;
   }
   html:not([mode]) .highlight .mo,
-html[mode=dark] .highlight .mo {
+  html[mode=dark] .highlight .mo {
     color: #ae81ff;
   }
   html:not([mode]) .highlight .sb,
-html[mode=dark] .highlight .sb {
+  html[mode=dark] .highlight .sb {
     color: #e6db74;
   }
   html:not([mode]) .highlight .sc,
-html[mode=dark] .highlight .sc {
+  html[mode=dark] .highlight .sc {
     color: #e6db74;
   }
   html:not([mode]) .highlight .sd,
-html[mode=dark] .highlight .sd {
+  html[mode=dark] .highlight .sd {
     color: #e6db74;
   }
   html:not([mode]) .highlight .s2,
-html[mode=dark] .highlight .s2 {
+  html[mode=dark] .highlight .s2 {
     color: #e6db74;
   }
   html:not([mode]) .highlight .se,
-html[mode=dark] .highlight .se {
+  html[mode=dark] .highlight .se {
     color: #ae81ff;
   }
   html:not([mode]) .highlight .sh,
-html[mode=dark] .highlight .sh {
+  html[mode=dark] .highlight .sh {
     color: #e6db74;
   }
   html:not([mode]) .highlight .si,
-html[mode=dark] .highlight .si {
+  html[mode=dark] .highlight .si {
     color: #e6db74;
   }
   html:not([mode]) .highlight .sx,
-html[mode=dark] .highlight .sx {
+  html[mode=dark] .highlight .sx {
     color: #e6db74;
   }
   html:not([mode]) .highlight .sr,
-html[mode=dark] .highlight .sr {
+  html[mode=dark] .highlight .sr {
     color: #e6db74;
   }
   html:not([mode]) .highlight .s1,
-html[mode=dark] .highlight .s1 {
+  html[mode=dark] .highlight .s1 {
     color: #e6db74;
   }
   html:not([mode]) .highlight .ss,
-html[mode=dark] .highlight .ss {
+  html[mode=dark] .highlight .ss {
     color: #e6db74;
   }
   html:not([mode]) .highlight .bp,
-html[mode=dark] .highlight .bp {
+  html[mode=dark] .highlight .bp {
     color: #f8f8f2;
   }
   html:not([mode]) .highlight .vc,
-html[mode=dark] .highlight .vc {
+  html[mode=dark] .highlight .vc {
     color: #f8f8f2;
   }
   html:not([mode]) .highlight .vg,
-html[mode=dark] .highlight .vg {
+  html[mode=dark] .highlight .vg {
     color: #f8f8f2;
   }
   html:not([mode]) .highlight .vi,
-html[mode=dark] .highlight .vi {
+  html[mode=dark] .highlight .vi {
     color: #f8f8f2;
   }
   html:not([mode]) .highlight .il,
-html[mode=dark] .highlight .il {
+  html[mode=dark] .highlight .il {
     color: #ae81ff;
   }
   html:not([mode]) .highlight .gu,
-html[mode=dark] .highlight .gu {
+  html[mode=dark] .highlight .gu {
     color: #75715e;
   }
   html:not([mode]) .highlight .gd,
-html[mode=dark] .highlight .gd {
+  html[mode=dark] .highlight .gd {
     color: #f92672;
     background-color: #561c08;
   }
   html:not([mode]) .highlight .gi,
-html[mode=dark] .highlight .gi {
+  html[mode=dark] .highlight .gi {
     color: #a6e22e;
     background-color: #0b5858;
   }
   html:not([mode]) .highlight .gp,
-html[mode=dark] .highlight .gp {
+  html[mode=dark] .highlight .gp {
     color: #818c96;
   }
   html:not([mode]) pre,
-html[mode=dark] pre {
+  html[mode=dark] pre {
     color: #bfbfbf;
   }
   html:not([mode]) kbd,
-html[mode=dark] kbd {
+  html[mode=dark] kbd {
     background-color: black;
   }
 
@@ -1713,11 +1713,11 @@ html[mode=dark] #archives li:nth-child(odd) {
 
 @media (prefers-color-scheme: dark) {
   html:not([mode]),
-html[mode=dark] {
+  html[mode=dark] {
     /* Framework color */
     --body-bg: var(--main-wrapper-bg);
     --mask-bg: rgb(68, 69, 70);
-    --main-wrapper-bg: rgb(27, 27, 30);
+    --main-wrapper-bg: rgba(27, 27, 30, 0.8);
     --main-border-color: rgb(44, 45, 45);
     --scrollbar-track-bg: rgba(0, 0, 0, 0.3);
     --scrollbar-thumb-bg: rgb(173 171 171 / 50%);
@@ -1739,14 +1739,14 @@ html[mode=dark] {
     --checkbox-color: rgb(118 120 121);
     --checkbox-checked-color: var(--link-color);
     /* Sidebar */
-    --sidebar-bg: radial-gradient(circle, #242424 0%, #1d1f27 100%);
+    --sidebar-bg: rgba(36,36,36, 0.8);
     --sidebar-muted-color: #6d6c6b;
     --sidebar-active-color: rgb(255 255 255 / 80%);
     --nav-cursor-color: rgb(183, 182, 182);
     --sidebar-btn-bg: rgb(117 116 116 / 20%);
     /* Topbar */
     --topbar-text-color: var(--text-color);
-    --topbar-wrapper-bg: rgb(39, 40, 43);
+    --topbar-wrapper-bg: rgba(39, 40, 43,0.8);
     --search-wrapper-bg: rgb(34, 34, 39);
     --search-wrapper-border-color: rgb(34, 34, 39);
     --search-icon-color: rgb(100, 102, 105);
@@ -1795,49 +1795,49 @@ html[mode=dark] {
     /* categories */
   }
   html:not([mode]) .post-content img,
-html[mode=dark] .post-content img {
+  html[mode=dark] .post-content img {
     filter: brightness(90%);
   }
   html:not([mode]) hr,
-html[mode=dark] hr {
+  html[mode=dark] hr {
     border-color: var(--main-border-color);
   }
   html:not([mode]) nav[data-toggle=toc] .nav-link.active,
-html:not([mode]) nav[data-toggle=toc] .nav-link.active:focus,
-html:not([mode]) nav[data-toggle=toc] .nav-link.active:hover,
-html:not([mode]) nav[data-toggle=toc] .nav > li > a:focus,
-html:not([mode]) nav[data-toggle=toc] .nav > li > a:hover,
-html[mode=dark] nav[data-toggle=toc] .nav-link.active,
-html[mode=dark] nav[data-toggle=toc] .nav-link.active:focus,
-html[mode=dark] nav[data-toggle=toc] .nav-link.active:hover,
-html[mode=dark] nav[data-toggle=toc] .nav > li > a:focus,
-html[mode=dark] nav[data-toggle=toc] .nav > li > a:hover {
+  html:not([mode]) nav[data-toggle=toc] .nav-link.active:focus,
+  html:not([mode]) nav[data-toggle=toc] .nav-link.active:hover,
+  html:not([mode]) nav[data-toggle=toc] .nav > li > a:focus,
+  html:not([mode]) nav[data-toggle=toc] .nav > li > a:hover,
+  html[mode=dark] nav[data-toggle=toc] .nav-link.active,
+  html[mode=dark] nav[data-toggle=toc] .nav-link.active:focus,
+  html[mode=dark] nav[data-toggle=toc] .nav-link.active:hover,
+  html[mode=dark] nav[data-toggle=toc] .nav > li > a:focus,
+  html[mode=dark] nav[data-toggle=toc] .nav > li > a:hover {
     color: var(--toc-highlight) !important;
     border-left-color: var(--toc-highlight) !important;
   }
   html:not([mode]) .categories.card,
-html:not([mode]) .list-group-item,
-html[mode=dark] .categories.card,
-html[mode=dark] .list-group-item {
+  html:not([mode]) .list-group-item,
+  html[mode=dark] .categories.card,
+  html[mode=dark] .list-group-item {
     background-color: var(--card-bg);
   }
   html:not([mode]) .categories .card-header,
-html[mode=dark] .categories .card-header {
+  html[mode=dark] .categories .card-header {
     background-color: var(--card-header-bg);
   }
   html:not([mode]) .categories .list-group-item,
-html[mode=dark] .categories .list-group-item {
+  html[mode=dark] .categories .list-group-item {
     border-left: none;
     border-right: none;
     padding-left: 2rem;
     border-color: var(--categories-border);
   }
   html:not([mode]) .categories .list-group-item:last-child,
-html[mode=dark] .categories .list-group-item:last-child {
+  html[mode=dark] .categories .list-group-item:last-child {
     border-bottom-color: var(--card-bg);
   }
   html:not([mode]) #archives li:nth-child(odd),
-html[mode=dark] #archives li:nth-child(odd) {
+  html[mode=dark] #archives li:nth-child(odd) {
     background-image: linear-gradient(to left, #1a1a1e, #27272d, #27272d, #27272d, #1a1a1e);
   }
 
@@ -1845,7 +1845,7 @@ html[mode=dark] #archives li:nth-child(odd) {
     /* Framework color */
     --body-bg: #fafafa;
     --mask-bg: #c1c3c5;
-    --main-wrapper-bg: white;
+    --main-wrapper-bg: rgba(255,255,255,0.8);
     --main-border-color: #f3f3f3;
     --scrollbar-track-bg: rgba(0, 0, 0, 0.3);
     --scrollbar-thumb-bg: rgba(0, 0, 0, 0.3);
@@ -2593,6 +2593,47 @@ figure .mfp-title {
   padding: 0 0.3rem;
 }
 
+/* --- bg-wallpaper --- */
+.bg-wallpaper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  transition: background .3s, transform .3s, height .3s;
+  background-size: cover;
+  background-position: 50%;
+  z-index: 0;
+}
+.bg-wallpaper:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  background-color: rgba(0,0,0,0);
+}
+.bg-wallpaper .wallpaper-video {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: .3s;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* Aplayer音乐播放器 */
+.aplayer-wrapper{
+  position: absolute;
+  /*z-index: 999;*/
+  bottom: 200px;
+  left: 40px;
+}
+
 #sidebar-trigger,
 #search-trigger {
   display: none;
@@ -2829,7 +2870,7 @@ figure .mfp-title {
     justify-content: space-around !important;
   }
   footer .footer-left,
-footer .footer-right {
+  footer .footer-right {
     text-align: center;
   }
 }
@@ -2841,7 +2882,7 @@ footer .footer-right {
   }
 
   html,
-body {
+  body {
     overflow-x: hidden;
   }
 
@@ -2857,7 +2898,7 @@ body {
     transform: translateX(0);
   }
   [sidebar-display] #topbar-wrapper,
-[sidebar-display] #main-wrapper {
+  [sidebar-display] #main-wrapper {
     transform: translateX(260px);
   }
 
@@ -2880,7 +2921,7 @@ body {
   }
 
   #breadcrumb,
-#search-wrapper {
+  #search-wrapper {
     display: none;
   }
 
@@ -2893,13 +2934,13 @@ body {
   }
 
   #main > div.row:first-child > div:nth-child(1),
-#main > div.row:first-child > div:nth-child(2) {
+  #main > div.row:first-child > div:nth-child(2) {
     margin-top: 0;
   }
 
   #topbar-title,
-#sidebar-trigger,
-#search-trigger {
+  #sidebar-trigger,
+  #search-trigger {
     display: block;
   }
 
@@ -3003,7 +3044,7 @@ body {
     margin-right: 1rem;
   }
   #sidebar .sidebar-bottom a,
-#sidebar .sidebar-bottom span {
+  #sidebar .sidebar-bottom span {
     width: 2rem;
   }
   #sidebar .sidebar-bottom .icon-border {
@@ -3222,7 +3263,7 @@ body {
     justify-content: flex-start !important;
   }
   #sidebar .sidebar-bottom > span,
-#sidebar .sidebar-bottom > a {
+  #sidebar .sidebar-bottom > a {
     margin-left: 0.15rem;
     margin-right: 0.15rem;
     height: 2rem;
@@ -3506,6 +3547,17 @@ h1 + .post-meta > div:nth-child(2) > span:not(:first-child)::before {
   line-height: 1.5rem;
   margin-top: 0.3rem;
   white-space: normal;
+}
+
+/* 评论 */
+.artalk, .atk-layer-wrap{
+  --at-color-bg: var(--sidebar-bg);
+  --at-color-font: var(--heading-color);
+  --at-color-border: var(--text-color);
+}
+.artalk>.atk-list>.atk-list-header .atk-dropdown-wrap .atk-dropdown {
+  background-color: var(--main-wrapper-bg);
+  border-color: var(--main-wrapper-bg);
 }
 
 @keyframes fade-up {
@@ -3962,11 +4014,11 @@ nav[data-toggle=toc] .nav .nav > li > a.active {
 
 @media all and (max-width: 576px) {
   #page-category ul > li::before,
-#page-tag ul > li::before {
+  #page-tag ul > li::before {
     margin: 0 0.5rem;
   }
   #page-category ul > li > a,
-#page-tag ul > li > a {
+  #page-tag ul > li > a {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
