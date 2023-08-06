@@ -1,12 +1,12 @@
 {{ if eq $.themeInfo.Comment.CommentType "Valine" }}
 <script src='//{{$.themeInfo.CDN.Url}}/npm/valine@1/dist/Valine.min.js'></script>
 
-<div id="vcomments" class="pt-2 pb-2">
+<div id="valine_comments" class="pt-2 pb-2">
 </div>
 
 <script type="text/javascript">
   new Valine({
-    el: '#vcomments',
+    el: '#valine_comments',
     appId: '{{$.themeInfo.Comment.Valine.appId}}', // Valine appID
     appKey: '{{$.themeInfo.Comment.Valine.appKey}}', // Valine appKey
     lang: 'zh-CN',
@@ -16,7 +16,7 @@
 
 {{else if eq $.themeInfo.Comment.CommentType "Gitalk" }}
 
-<div id="gitalk-container"></div>
+<div id="gitalk_comments"></div>
 
 <link rel="stylesheet" href="https://{{$.themeInfo.CDN.Url}}/npm/gitalk@1/dist/gitalk.min.css">
 <script src="//{{$.themeInfo.CDN.Url}}/npm/gitalk@1/dist/gitalk.min.js"></script>
@@ -33,18 +33,18 @@
     labels: ['Gitalk']
   });
 
-  gitalk.render('gitalk-container');
+  gitalk.render('gitalk_comments');
 </script>
 
 {{ else if eq $.themeInfo.Comment.CommentType "Artalk" }}
 
-<div id="acomments"></div>
+<div id="artalk_comments"></div>
 <link href="https://zhangyunjie.com.cn:23366/dist/Artalk.css" rel="stylesheet">
 <script src="https://zhangyunjie.com.cn:23366/dist/Artalk.js"></script>
 
 <script>
   Artalk.init({
-    el: '#acomments', // 绑定元素的 Selector
+    el: '#artalk_comments', // 绑定元素的 Selector
     pageKey: '', // 固定链接 (留空自动获取)
     pageTitle: '', // 页面标题 (留空自动获取)
     server: '{{$.themeInfo.Comment.Artalk.server}}', // 后端地址

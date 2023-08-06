@@ -3549,17 +3549,6 @@ h1 + .post-meta > div:nth-child(2) > span:not(:first-child)::before {
   white-space: normal;
 }
 
-/* 评论 */
-.artalk, .atk-layer-wrap{
-  --at-color-bg: var(--sidebar-bg);
-  --at-color-font: var(--heading-color);
-  --at-color-border: var(--text-color);
-}
-.artalk>.atk-list>.atk-list-header .atk-dropdown-wrap .atk-dropdown {
-  background-color: var(--main-wrapper-bg);
-  border-color: var(--main-wrapper-bg);
-}
-
 @keyframes fade-up {
   from {
     opacity: 0;
@@ -3782,6 +3771,17 @@ nav[data-toggle=toc] .nav .nav > li > a.active {
   margin-left: 0.6em;
   font-size: 0.7em;
   font-family: "Oswald", sans-serif;
+}
+
+/* Artalk评论 */
+.artalk, .atk-layer-wrap{
+  --at-color-bg: var(--sidebar-bg);
+  --at-color-font: var(--heading-color);
+  --at-color-border: var(--text-color);
+}
+.artalk>.atk-list>.atk-list-header .atk-dropdown-wrap .atk-dropdown {
+  background-color: var(--main-wrapper-bg);
+  border-color: var(--main-wrapper-bg);
 }
 
 /*
