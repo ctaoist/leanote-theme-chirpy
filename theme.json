@@ -59,19 +59,13 @@
         "facebook": {
             "Url": "https://www.facebook.com"
         },
-        "leanote": {
-            "Url": "https://github.com/zhang-yun-jie/leanote"
-        },
-        "chirpy": {
-            "Url": "https://github.com/zhang-yun-jie/leanote-theme-chirpy"
-        },
-        "live2d-widget": {
+        "live2dWidget": {
             "UrL": "https://live2d-widget.zhangyunjie.com.cn/autoload.js"
         },
         "cloudflare": {
             "Url": "https://cdnjs.cloudflare.com"
         },
-        "google-analytics": {
+        "googleAnalytics": {
             "Url": "https://www.google-analytics.com/analytics.js"
         },
         "creativecommons": {
