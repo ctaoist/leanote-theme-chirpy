@@ -1556,7 +1556,7 @@ html[mode=light] {
   --sidebar-btn-bg: white;
   /* Topbar */
   --topbar-text-color: rgb(78, 78, 78);
-  --topbar-wrapper-bg: white;
+  --topbar-wrapper-bg: rgba(255,255,255,0.8);
   --search-wrapper-bg: rgb(245 245 245 / 50%);
   --search-wrapper-border-color: rgb(245 245 245);
   --search-tag-bg: #f8f9fa;
@@ -1592,7 +1592,7 @@ html[mode=light] {
   --timeline-node-bg: #c2c6cc;
   --timeline-year-dot-color: #ffffff;
   /* Footer */
-  --footer-bg-color: #ffffff;
+  --footer-bg-color: rgba(255,255,255,0.8);
   --footer-link: #424242;
 }
 
@@ -1629,7 +1629,7 @@ html[mode=dark] {
   --sidebar-btn-bg: rgb(117 116 116 / 20%);
   /* Topbar */
   --topbar-text-color: var(--text-color);
-  --topbar-wrapper-bg: rgb(39, 40, 43);
+  --topbar-wrapper-bg: rgba(39, 40, 43,0.8);
   --search-wrapper-bg: rgb(34, 34, 39);
   --search-wrapper-border-color: rgb(34, 34, 39);
   --search-icon-color: rgb(100, 102, 105);
@@ -1872,7 +1872,7 @@ html[mode=dark] #archives li:nth-child(odd) {
     --sidebar-btn-bg: white;
     /* Topbar */
     --topbar-text-color: rgb(78, 78, 78);
-    --topbar-wrapper-bg: white;
+    --topbar-wrapper-bg: rgba(255,255,255,0.8);
     --search-wrapper-bg: rgb(245 245 245 / 50%);
     --search-wrapper-border-color: rgb(245 245 245);
     --search-tag-bg: #f8f9fa;
@@ -1908,7 +1908,7 @@ html[mode=dark] #archives li:nth-child(odd) {
     --timeline-node-bg: #c2c6cc;
     --timeline-year-dot-color: #ffffff;
     /* Footer */
-    --footer-bg-color: #ffffff;
+    --footer-bg-color: rgba(255,255,255,0.8);
     --footer-link: #424242;
   }
 }
