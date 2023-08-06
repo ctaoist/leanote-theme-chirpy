@@ -2547,6 +2547,12 @@ figure .mfp-title {
 #sidebar .nav-container{
   margin-bottom: 0!important;
 }
+.myNav-container .nav-item .nav-link>svg{
+  transform: scale(0.8);
+}
+#sidebar ul .nav-item .nav-link > svg.unloaded {
+  display: inline-block !important;
+}
 
 @media (hover: hover) {
   #sidebar ul > li:last-child::after {
