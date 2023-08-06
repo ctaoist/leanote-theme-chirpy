@@ -29,13 +29,54 @@
     "Author": "zhangyunjie",
     "Icon": "avatar.jpg",
     "Avatar": "avatar.jpg",
-    "AuthorUrl": "https://blog.ctaoist.cn",
+    "AuthorUrl": "https://zhangyunjie.com.cn:9000/blog/zhangyunjie",
     "PostAuthor": "zhangyunjie",
     "Title": "云",
     "SubTitle": "骑马倚斜桥，满楼红袖招。",
     "CDN": {
-        "Name": "jsdelivr",
-        "Url": "cdn.jsdelivr.net"
+        "yun": {
+            "Url": "https://cdn.zhangyunjie.com.cn"
+        },
+        "zhang": {
+            "Url": "https://zhangyunjie.com.cn"
+        },
+        "jsdelivr": {
+            "Name": "jsdelivr",
+            "Url": "cdn.jsdelivr.net"
+        },
+        "go": {
+            "Url": "https://foreverblog.cn/go.html"
+        },
+        "weibo": {
+            "Url": "http://service.weibo.com"
+        },
+        "twitter": {
+            "Url": "https://twitter.com"
+        },
+        "telegram": {
+            "Url": "https://telegram.me"
+        },
+        "facebook": {
+            "Url": "https://www.facebook.com"
+        },
+        "leanote": {
+            "Url": "https://github.com/zhang-yun-jie/leanote"
+        },
+        "chirpy": {
+            "Url": "https://github.com/zhang-yun-jie/leanote-theme-chirpy"
+        },
+        "live2d-widget": {
+            "UrL": "https://live2d-widget.zhangyunjie.com.cn/autoload.js"
+        },
+        "cloudflare": {
+            "Url": "https://cdnjs.cloudflare.com"
+        },
+        "google-analytics": {
+            "Url": "https://www.google-analytics.com/analytics.js"
+        },
+        "creativecommons": {
+            "Url": "https://creativecommons.org/licenses/by/4.0/"
+        }
     },
     "ReadNumType": "",
     "GoogleAnalytics": {

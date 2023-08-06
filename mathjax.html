@@ -14,9 +14,9 @@
     };
 </script>
 
-{{if eq $.themeInfo.CDN.Name "jsdelivr"}}
+{{if eq $.themeInfo.CDN.jsdelivr.Name "jsdelivr"}}
 <script type="text/javascript" id="MathJax-script" async
-    src="https://{{$.themeInfo.CDN.Url}}/npm/mathjax@3/es5/tex-chtml.js"></script>
+    src="https://{{$.themeInfo.CDN.jsdelivr.Url}}/npm/mathjax@3/es5/tex-chtml.js"></script>
 {{else}}
 <script type="text/javascript" id="MathJax-script" async
     src="/libs/mathjax3/es5/tex-chtml.min.js"></script>

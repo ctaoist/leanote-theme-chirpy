@@ -6,16 +6,16 @@
     <div class="footer-left">
       <p class="mb-0">
         © 2023
-        <a href="https://github.com/zhang-yun-jie">zhangyunjie</a>.
+        <a href="{{ $.themeInfo.SocialLinks[0].Url }}">zhangyunjie</a>.
         <span data-toggle="tooltip" data-placement="top"
-              title="除非另有说明，本网站上的博客文章均由作者按照知识共享署名 4.0 国际 (CC BY 4.0) 许可协议进行授权。">保留部分权利。</span>
+              title="除非另有说明，本网站上的博客文章均由作者按照知识共享署名 4.0 国际 (CC BY 4.0) 许可协议进行授权。" style="cursor: pointer;">保留部分权利。</span>
       </p>
     </div>
 
     <div class="footer-right">
       <p class="mb-0">
-        Powered by <a href="https://github.com/zhang-yun-jie/leanote" target="_blank" rel="noopener">Leanote</a>
-        with <a href="https://github.com/zhang-yun-jie/leanote-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme.
+        Powered by <a href="{{$.themeInfo.CDN.leanote.Url}}" target="_blank" rel="noopener">Leanote</a>
+        with <a href="{{$.themeInfo.CDN.chirpy.Url}}" target="_blank" rel="noopener">Chirpy</a> theme.
       </p>
     </div>
   </div> <!-- div.d-flex -->

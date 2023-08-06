@@ -29,21 +29,21 @@
     Archives
     {{end}}
   </title>
-  {{ if eq $.themeInfo.CDN.Name "jsdelivr" }}
+  {{ if eq $.themeInfo.CDN.jsdelivr.Name "jsdelivr" }}
   <!-- jsDelivr CDN -->
-  <link rel="preconnect" href="https://{{$.themeInfo.CDN.Url}}">
-  <link rel="dns-prefetch" href="https://{{$.themeInfo.CDN.Url}}">
+  <link rel="preconnect" href="https://{{$.themeInfo.CDN.jsdelivr.Url}}">
+  <link rel="dns-prefetch" href="https://{{$.themeInfo.CDN.jsdelivr.Url}}">
   <!-- JavaScript -->
-  <script src="https://{{$.themeInfo.CDN.Url}}/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="https://{{$.themeInfo.CDN.jsdelivr.Url}}/npm/jquery@3/dist/jquery.min.js"></script>
   <!-- Bootstrap -->
-  <script src="https://{{$.themeInfo.CDN.Url}}/combine/npm/popper.js@1.16.1,npm/bootstrap@4/dist/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://{{$.themeInfo.CDN.Url}}/npm/bootstrap@4/dist/css/bootstrap.min.css">
+  <script src="https://{{$.themeInfo.CDN.jsdelivr.Url}}/combine/npm/popper.js@1.16.1,npm/bootstrap@4/dist/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://{{$.themeInfo.CDN.jsdelivr.Url}}/npm/bootstrap@4/dist/css/bootstrap.min.css">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://{{$.themeInfo.CDN.Url}}/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+  <link rel="stylesheet" href="https://{{$.themeInfo.CDN.jsdelivr.Url}}/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
 
-  <!-- <script async src="https://{{$.themeInfo.CDN.Url}}/npm/countup.js@1.9.3/dist/countUp.min.js"></script> -->
-  <!-- <script src="https://{{$.themeInfo.CDN.Url}}/npm/xregexp@5/xregexp-all.min.js"></script> -->
-  <!-- <script src="https://{{$.themeInfo.CDN.Url}}/combine/npm/lozad/dist/lozad.min.js"></script> -->
+  <!-- <script async src="https://{{$.themeInfo.CDN.jsdelivr.Url}}/npm/countup.js@1.9.3/dist/countUp.min.js"></script> -->
+  <!-- <script src="https://{{$.themeInfo.CDN.jsdelivr.Url}}/npm/xregexp@5/xregexp-all.min.js"></script> -->
+  <!-- <script src="https://{{$.themeInfo.CDN.jsdelivr.Url}}/combine/npm/lozad/dist/lozad.min.js"></script> -->
   {{else}}
   <script src="/libs/jquery/jquery-1.9.0.min.js"></script>
   <script src="/libs/popper.min.js"></script>
@@ -56,9 +56,9 @@
   <script src="{{$.themeBaseUrl}}/search.js"></script>
   <link href="{{$.themeBaseUrl}}/style.css" rel="stylesheet">
 
-  <script src="https://live2d-widget.zhangyunjie.com.cn/autoload.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css" integrity="sha512-CIYsJUa3pr1eoXlZFroEI0mq0UIMUqNouNinjpCkSWo3Bx5NRlQ0OuC6DtEB/bDqUWnzXc1gs2X/g52l36N5iw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js" integrity="sha512-RWosNnDNw8FxHibJqdFRySIswOUgYhFxnmYO3fp+BgCU7gfo4z0oS7mYFBvaa8qu+axY39BmQOrhW3Tp70XbaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="{{$.themeInfo.CDN.live2d-widget.Url}}"></script>
+  <link rel="stylesheet" href="{{$.themeInfo.CDN.cloudflare.Url}}/ajax/libs/aplayer/1.10.1/APlayer.min.css" integrity="sha512-CIYsJUa3pr1eoXlZFroEI0mq0UIMUqNouNinjpCkSWo3Bx5NRlQ0OuC6DtEB/bDqUWnzXc1gs2X/g52l36N5iw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="{{$.themeInfo.CDN.cloudflare.Url}}/ajax/libs/aplayer/1.10.1/APlayer.min.js" integrity="sha512-RWosNnDNw8FxHibJqdFRySIswOUgYhFxnmYO3fp+BgCU7gfo4z0oS7mYFBvaa8qu+axY39BmQOrhW3Tp70XbaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <style>
     #search-results .post-tags a {
@@ -73,7 +73,7 @@
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    })(window,document,'script','{{$.themeInfo.CDN.google-analytics.Url}}','ga');
 
     ga('create', '{{ $.themeInfo.GoogleAnalytics.Id }}', 'auto');
     ga('send', 'pageview');
@@ -186,7 +186,7 @@
 
   </div><!-- .profile-wrapper -->
 
-  <ul class="w-100">
+  <ul class="w-100 nav-container">
 
     <!-- home -->
     <li class="nav-item{{if $.curIsIndex}} active{{end}}">
@@ -218,13 +218,22 @@
     </li>
     <!--About-->
     <li class="nav-item">
-      <a href="{{$.singleUrl}}/About-Me" class="nav-link">
+      <a href="{{$.singleUrl}}/About-Me" class="nav-link" >
         <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i>
         <span>关于</span>
       </a>
     </li>
+  </ul>
 
-  </ul> <!-- ul.nav.flex-column -->
+  <!-- DIY导航 -->
+  <div class="myNav-container">
+    <div class="nav-item nav-go">
+      <a class="nav-link" onclick="window.open('{{ $.themeInfo.CDN.go.Url }}','_blank')">
+        <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i>
+        <span>虫洞</span>
+      </a>
+    </div>
+  </div>
   <!-- </div> #nav-wrapper -->
 
   {{template "model-toggle.html" $}}
@@ -306,7 +315,7 @@
 
 <!-- bg-wallpaper -->
 <div class="bg-wallpaper" style="background: none;">
-  <video class="wallpaper-video" autoplay="" loop="" poster="https://files.codelife.cc/itab/defaultWallpaper/videos/21.mp4?x-oss-process=video/snapshot,t_1,f_jpg,w_1366,h_768,m_fast" src="https://cdn.zhangyunjie.com.cn/common/202308041654618.mp4"></video>
+  <video class="wallpaper-video" autoplay="" loop="" poster="https://files.codelife.cc/itab/defaultWallpaper/videos/21.mp4?x-oss-process=video/snapshot,t_1,f_jpg,w_1366,h_768,m_fast" src="{{$.themeInfo.CDN.yun.Url}}/common/202308041654618.mp4"></video>
   <div class="aplayer-wrapper">
     <div id="aplayer"></div>
   </div>

@@ -1,6 +1,6 @@
 {{ if and $.themeInfo.ReadNumType (eq $.themeInfo.ReadNumType "Leacloud") }}
-<script src="//{{$.themeInfo.CDN.Url}}/npm/leancloud-storage@3/dist/av-min.js"></script>
-<script type="text/javascript"> 
+<script src="//{{$.themeInfo.CDN.jsdelivr.Url}}/npm/leancloud-storage@3/dist/av-min.js"></script>
+<script type="text/javascript">
   $(function () {
     AV.init({
         appId: '{{$.themeInfo.Comment.Valine.appId}}',

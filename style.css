@@ -16,7 +16,7 @@
 * Mainly scss modules, only imported to `assets/css/main.scss`
 */
 /* ---------- scss placeholder --------- */
-@import url("https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;900&display=swap");
+@import url("https://cdn.zhangyunjie.com.cn/iconfont/google.css");
 #search-results a, h5, h4, h3, h2, h1 {
   color: var(--heading-color);
   font-weight: 400;
@@ -2460,6 +2460,7 @@ figure .mfp-title {
   vertical-align: middle;
 }
 #sidebar .nav-item {
+  cursor: pointer;
   text-align: center;
   display: table;
   height: 3rem;
@@ -2542,6 +2543,12 @@ figure .mfp-title {
 }
 #sidebar .sidebar-bottom #mode-toggle-wrapper:hover > i {
   color: var(--sidebar-active-color);
+}
+#sidebar .nav-container{
+  margin-bottom: 0!important;
+}
+#sidebar .myNav-container .nav-item{
+  margin: 0 auto;
 }
 
 @media (hover: hover) {
