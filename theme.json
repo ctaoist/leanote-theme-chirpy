@@ -59,17 +59,8 @@
         "facebook": {
             "Url": "https://www.facebook.com"
         },
-        "live2dWidget": {
-            "UrL": "https://live2d-widget.zhangyunjie.com.cn/autoload.js"
-        },
         "cloudflare": {
             "Url": "https://cdnjs.cloudflare.com"
-        },
-        "googleAnalytics": {
-            "Url": "https://www.google-analytics.com/analytics.js"
-        },
-        "creativecommons": {
-            "Url": "https://creativecommons.org/licenses/by/4.0/"
         }
     },
     "ReadNumType": "",
