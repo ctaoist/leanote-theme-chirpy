@@ -1527,9 +1527,9 @@ div[class^=highlighter-rouge] pre.lineno, div.language-plaintext.highlighter-rou
 html:not([mode]),
 html[mode=light] {
   /* Framework color */
-  --body-bg: #fafafa;
+  --body-bg: rgba(250,250,250,0.8);
   --mask-bg: #c1c3c5;
-  --main-wrapper-bg: white;
+  --main-wrapper-bg: rgba(255,255,255,0.8);
   --main-border-color: #f3f3f3;
   --scrollbar-track-bg: rgba(0, 0, 0, 0.3);
   --scrollbar-thumb-bg: rgba(0, 0, 0, 0.3);
@@ -1549,7 +1549,7 @@ html[mode=light] {
   --checkbox-color: #c5c5c5;
   --checkbox-checked-color: #07a8f7;
   /* Sidebar */
-  --sidebar-bg: #eeeeee;
+  --sidebar-bg: rgba(238,238,238,0.8);
   --sidebar-muted-color: #a2a19f;
   --sidebar-active-color: #424242;
   --nav-cursor-color: #757575;
@@ -1600,7 +1600,7 @@ html[mode=dark] {
   /* Framework color */
   --body-bg: var(--main-wrapper-bg);
   --mask-bg: rgb(68, 69, 70);
-  --main-wrapper-bg: rgb(27, 27, 30);
+  --main-wrapper-bg: rgb(27, 27, 30,0.8);
   --main-border-color: rgb(44, 45, 45);
   --scrollbar-track-bg: rgba(0, 0, 0, 0.3);
   --scrollbar-thumb-bg: rgb(173 171 171 / 50%);
@@ -1622,7 +1622,7 @@ html[mode=dark] {
   --checkbox-color: rgb(118 120 121);
   --checkbox-checked-color: var(--link-color);
   /* Sidebar */
-  --sidebar-bg: radial-gradient(circle, #242424 0%, #1d1f27 100%);
+  --sidebar-bg: radial-gradient(circle, rgba(36, 36, 36, 0.8) 0%, rgba(29, 31, 39, 0.8) 100%);
   --sidebar-muted-color: #6d6c6b;
   --sidebar-active-color: rgb(255 255 255 / 80%);
   --nav-cursor-color: rgb(183, 182, 182);
@@ -1843,7 +1843,7 @@ html[mode=dark] #archives li:nth-child(odd) {
 
   html[mode=light] {
     /* Framework color */
-    --body-bg: #fafafa;
+    --body-bg: rgba(250,250,250,0.8);
     --mask-bg: #c1c3c5;
     --main-wrapper-bg: rgba(255,255,255,0.8);
     --main-border-color: #f3f3f3;
@@ -1865,7 +1865,7 @@ html[mode=dark] #archives li:nth-child(odd) {
     --checkbox-color: #c5c5c5;
     --checkbox-checked-color: #07a8f7;
     /* Sidebar */
-    --sidebar-bg: #eeeeee;
+    --sidebar-bg: rgba(238,238,238,0.8);
     --sidebar-muted-color: #a2a19f;
     --sidebar-active-color: #424242;
     --nav-cursor-color: #757575;

@@ -36,23 +36,28 @@
   gitalk.render('gitalk-container');
 </script>
 
-{{ else if eq $.themeInfo.Comment.CommentType "Disqus" }}
+{{ else if eq $.themeInfo.Comment.CommentType "Artalk" }}
 
-<div id="disqus_thread" class="pt-2 pb-2">
-  <p class="text-center text-muted small">Comments powered by <a href="https://disqus.com/">Disqus</a>.</p>
-</div>
+<div id="acomments"></div>
+<link href="https://zhangyunjie.com.cn:23366/dist/Artalk.css" rel="stylesheet">
+<script src="https://zhangyunjie.com.cn:23366/dist/Artalk.js"></script>
 
-<script type="text/javascript">
-  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-  var disqus_shortname = '{{.themeInfo.Comment.Disqus.DisqusId}}'; // required: replace example with your forum shortname
-  var disqus_identifier = '{{.blogInfo.UserId}}/{{$.post.NoteId}}/{{$.post.Title}}'; // 博客链接
-
-  /* * * DON'T EDIT BELOW THIS LINE * * */
-  (function () {
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
+<script>
+  Artalk.init({
+    el: '#acomments', // 绑定元素的 Selector
+    pageKey: '', // 固定链接 (留空自动获取)
+    pageTitle: '', // 页面标题 (留空自动获取)
+    server: '{{$.themeInfo.Comment.Artalk.server}}', // 后端地址
+    site: '{{$.themeInfo.Comment.Artalk.site}}', // 你的站点名
+    emoticons: '{{$.themeInfo.Comment.Artalk.emoticons}}',
+    gravatar: {
+      mirror: '{{$.themeInfo.Comment.Artalk.gravatar.mirror}}',
+      params: '{{$.themeInfo.Comment.Artalk.gravatar.params}}',
+    },
+    avatarURLBuilder: (comment) => {
+      return `/api/avatar?email=${comment.email_encrypted}`
+    }
+  })
 </script>
 
 {{ end }}
