@@ -27,7 +27,7 @@
     clientSecret: '{{$.themeInfo.Comment.Gitalk.clientSecret}}',
     repo: '{{$.themeInfo.Comment.Gitalk.repo}}',
     owner: '{{$.themeInfo.Comment.Gitalk.owner}}', // 仓库的创建者
-    admin: {{$.themeInfo.Comment.Gitalk.admin}}, // 如果仓库有多个人可以操作，那么在这里以数组形式写出
+    admin: '{{$.themeInfo.Comment.Gitalk.admin}}', // 如果仓库有多个人可以操作，那么在这里以数组形式写出
     id: '{{$.post.Title}}',      // Ensure uniqueness and length less than 50
     distractionFreeMode: false,  // Facebook-like distraction free mode
     labels: ['Gitalk']
@@ -45,18 +45,8 @@
 <script>
   Artalk.init({
     el: '#artalk_comments', // 绑定元素的 Selector
-    pageKey: '', // 固定链接 (留空自动获取)
-    pageTitle: '', // 页面标题 (留空自动获取)
     server: '{{$.themeInfo.Comment.Artalk.server}}', // 后端地址
-    site: '{{$.themeInfo.Comment.Artalk.site}}', // 你的站点名
-    emoticons: '{{$.themeInfo.Comment.Artalk.emoticons}}',
-    gravatar: {
-      mirror: '{{$.themeInfo.Comment.Artalk.gravatar.mirror}}',
-      params: '{{$.themeInfo.Comment.Artalk.gravatar.params}}',
-    },
-    avatarURLBuilder: (comment) => {
-      return `/api/avatar?email=${comment.email_encrypted}`
-    }
+    site: '{{$.themeInfo.Comment.Artalk.site}}' // 你的站点名
   })
 </script>
 

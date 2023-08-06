@@ -3549,6 +3549,17 @@ h1 + .post-meta > div:nth-child(2) > span:not(:first-child)::before {
   white-space: normal;
 }
 
+/* Artalk评论 */
+.artalk, .atk-layer-wrap{
+  --at-color-bg: var(--sidebar-bg)!important;
+  --at-color-font: var(--heading-color)!important;
+  --at-color-border: var(--btn-border-color)!important;
+}
+.artalk>.atk-list>.atk-list-header .atk-dropdown-wrap .atk-dropdown {
+  background-color: var(--main-wrapper-bg)!important;
+  border-color: var(--main-wrapper-bg)!important;
+}
+
 @keyframes fade-up {
   from {
     opacity: 0;
@@ -3773,16 +3784,6 @@ nav[data-toggle=toc] .nav .nav > li > a.active {
   font-family: "Oswald", sans-serif;
 }
 
-/* Artalk评论 */
-.artalk, .atk-layer-wrap{
-  --at-color-bg: var(--sidebar-bg);
-  --at-color-font: var(--heading-color);
-  --at-color-border: var(--text-color);
-}
-.artalk>.atk-list>.atk-list-header .atk-dropdown-wrap .atk-dropdown {
-  background-color: var(--main-wrapper-bg);
-  border-color: var(--main-wrapper-bg);
-}
 
 /*
   Style for Archives

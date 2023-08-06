@@ -55,15 +55,8 @@
             "admin": [ "" ]
         },
         "Artalk": {
-            "pageKey": "",
-            "pageTitle": "",
             "server": "https://zhangyunjie.com.cn:23366",
-            "site": "二十八画生",
-            "emoticons": "https://cdn.zhangyunjie.com.cn/assets/emojis/ArtalkJS.json",
-            "gravatar": {
-                "mirror": "https://cravatar.cn/avatar/",
-                "params": "d=mp&s=240"
-            }
+            "site": "云"
         }
     },
     "SocialLinks": [
