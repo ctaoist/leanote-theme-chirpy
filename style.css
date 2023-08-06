@@ -2547,9 +2547,6 @@ figure .mfp-title {
 #sidebar .nav-container{
   margin-bottom: 0!important;
 }
-#sidebar .myNav-container .nav-item{
-  margin: 0 auto;
-}
 
 @media (hover: hover) {
   #sidebar ul > li:last-child::after {

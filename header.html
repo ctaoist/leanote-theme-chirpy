@@ -186,8 +186,7 @@
 
   </div><!-- .profile-wrapper -->
 
-  <ul class="w-100 nav-container">
-
+  <ul class="nav-container w-100">
     <!-- home -->
     <li class="nav-item{{if $.curIsIndex}} active{{end}}">
       <a href="{{.indexUrl}}" class="nav-link">
@@ -224,16 +223,15 @@
       </a>
     </li>
   </ul>
-
   <!-- DIY导航 -->
-  <div class="myNav-container">
-    <div class="nav-item nav-go">
+  <ul class="myNav-container w-100">
+    <li class="nav-item">
       <a class="nav-link" onclick="window.open('{{ $.themeInfo.CDN.go.Url }}','_blank')">
         <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i>
         <span>虫洞</span>
       </a>
-    </div>
-  </div>
+    </li>
+  </ul>
   <!-- </div> #nav-wrapper -->
 
   {{template "model-toggle.html" $}}
