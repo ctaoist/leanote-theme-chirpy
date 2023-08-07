@@ -17,6 +17,7 @@
 */
 /* ---------- scss placeholder --------- */
 @import url("https://cdn.zhangyunjie.com.cn/iconfont/google.css");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
 #search-results a, h5, h4, h3, h2, h1 {
   color: var(--heading-color);
   font-weight: 400;
@@ -2547,8 +2548,17 @@ figure .mfp-title {
 #sidebar .nav-container{
   margin-bottom: 0!important;
 }
-.myNav-container .nav-item .nav-link>svg{
-  transform: scale(0.8);
+.myNav-container .nav-item:after{
+  display: none!important;
+}
+.myNav-container .nav-item{
+  text-align:center;
+}
+.myNav-container .nav-item .nav-link>i{
+  font-size: 1.08rem;
+  font-weight: 900;
+  line-height: 1;
+  vertical-align: middle;
 }
 #sidebar ul .nav-item .nav-link > svg.unloaded {
   display: inline-block !important;

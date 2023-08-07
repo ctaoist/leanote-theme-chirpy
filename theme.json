@@ -47,18 +47,6 @@
         "go": {
             "Url": "https://foreverblog.cn/go.html"
         },
-        "weibo": {
-            "Url": "http://service.weibo.com"
-        },
-        "twitter": {
-            "Url": "https://twitter.com"
-        },
-        "telegram": {
-            "Url": "https://telegram.me"
-        },
-        "facebook": {
-            "Url": "https://www.facebook.com"
-        },
         "cloudflare": {
             "Url": "https://cdnjs.cloudflare.com"
         }
